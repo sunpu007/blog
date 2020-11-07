@@ -14,7 +14,54 @@ module.exports = {
       { text: '服务器', link: '/server/' },
       { text: '关于我', link: '/about/' },
       { text: 'github', link: 'https://github.com/sunpu007/blog' }
-    ]
+    ],
+    sidebarDepth: 3,
+    displayAllHeaders: true,
+    sidebar: {
+      '/webframe/': [
+        {
+          title: 'Javascript',
+          collapsable: false,
+          children: [
+            '/webframe/javascript/utils.md'
+          ]
+        },
+        {
+          title: 'Vue',
+          collapsable: false,
+          children: [
+            '/webframe/vue/toast.md',
+            '/webframe/vue/svg.md'
+          ]
+        },
+        {
+          title: 'Typescript',
+          collapsable: false,
+          children: [
+            '/webframe/typescript/arrayList.md'
+          ]
+        },
+      ],
+      '/backend/': [
+        {
+          title: 'Node',
+          collapsable: false,
+          children: [
+            '/backend/node/download-file.md',
+            '/backend/node/command-out.md'
+          ]
+        },
+      ],
+      '/about/': [
+        {
+          title: '',
+          collapsable: false,
+          children: [
+            '/about/'
+          ]
+        },
+      ]
+    },
   },
   plugins: [
     ['@vuepress/back-to-top'], // 返回顶部
