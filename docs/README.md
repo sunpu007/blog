@@ -2,7 +2,7 @@
 home: true
 heroImage: http://cdn-blog.myjerry.cn/avatar/blog-avatar.jpg
 actionText: Get Started →
-actionLink: /
+actionLink: /webframe/
 features:
 - title: Web
   details: 
