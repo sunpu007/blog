@@ -1,7 +1,7 @@
 ---
 home: true
-heroImage: http://cdn-blog.myjerry.cn/avatar/blog-avatar.jpg
-actionText: Get Started →
+heroImage: /blog-avatar.jpg
+actionText: Start reading →
 actionLink: /webframe/
 features:
 - title: Web
@@ -11,3 +11,7 @@ features:
 - title: Java
   details: 
 footer: 陕ICP备17007879号 | Copyright © 2017-present Jerry
+---
+
+### 技术栈预览图
+
