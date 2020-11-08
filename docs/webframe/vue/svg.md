@@ -2,7 +2,7 @@
 
 > 创建`icon-component`组件
 
-```
+```javascript
 // components/SvgIcon
 <template>
   <div v-if="isExternal" :style="styleExternalIcon" class="svg-external-icon svg-icon" v-on="$listeners" />
@@ -72,7 +72,8 @@ export default {
 
 接下来我们在`vue-cli`基础上进行改造，配置`svg-sprite-loader`，将多个SVG打包成`svg-sprite`。
 我们不能保证所有的SVG都是用来作为Icon的，并且`url-loader`会将所有SVG处理成base64，所以使用webpack 的`exclude`和`include`，让`url-loader`处理除此文件夹之外的SVG，`svg-sprite-loader`只处理指定文件夹下的SVG。`Electron-vue`也可参照。
-```
+
+```javascript
 {
   test: /\.svg$/,
   include: [resolve('src/icons')],
@@ -95,8 +96,10 @@ export default {
   }
 }
 ```
+
 > `Nuxt.js`支持，修改`nuxt.config`文件
-```
+
+```javascript
 build: {
   extend (config, ctx) {
     const svgRule = config.module.rules.find(rule => rule.test.test('.svg'))
@@ -117,7 +120,8 @@ build: {
 > 自动导入
 
 创建一个专门存放SVG图标的文件夹`@src/icons`，将所有SVG图标放到该文件夹下。之后使用webpack的[require.context](https://webpack.js.org/guides/dependency-management/#require-context)，通过正则引入SVG图标文件
-```
+
+```javascript
 const requireAll = requireContext => requireContext.keys().map(requireContext)
 const req = require.context('./svg', false, /\.svg$/)
 requireAll(req)
@@ -125,7 +129,7 @@ requireAll(req)
 
 > 页面使用
 
-```
+```javascript
 <svg-icon class="login" />
 ```
 

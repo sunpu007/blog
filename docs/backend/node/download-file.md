@@ -3,14 +3,16 @@
 > 获取网络文件名
 
 使用`path`模块获取网络文件名。
-```
+
+```javascript
 const fileName = fileName ? fileName : Path.basename(fileUrl);
 ```
 
 > 创建网络连接
 
 由于`http`与`https`所使用的获取下载流模块不同，所以需要对不同协议创建不同的连接。
-```
+
+```javascript
 const url = URL.parse(fileUrl);
 let req = null;
 if (url.protocol === 'http:') req = http.request(url);
@@ -20,14 +22,16 @@ if (url.protocol === 'https:') req = https.request(url);
 > 创建文件写入流
 
 由于`http`/`https`获取的文件信息是流信息，所以需要使用`fs`模块来创建文件写入流
-```
+
+```javascript
 const stream = fs.createWriteStream(path + fileName);
 ```
 
 > 监听网络连接并写入文件
 
 监听连接的响应，获取返回信息流并写入文件。因为io流非常耗费性能，所以每写完一个文件必须要将其关闭，释放资源。
-```
+
+```javascript
 req.on('response', (res) => {
   const len = parseInt(res.headers['content-length'], 10);
 
@@ -57,7 +61,7 @@ req.end();
 
 > 完整代码
 
-```
+```javascript
 'use strict';
 
 const ProgressBar = require('progress');

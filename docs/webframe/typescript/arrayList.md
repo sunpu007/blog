@@ -2,7 +2,7 @@
 
 > 完整代码
 
-```
+``` typescript
 class ArrayList<E> {
 
   /**
