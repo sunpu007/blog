@@ -76,6 +76,12 @@ module.exports = {
       clientSecret: '2556e373875d899e7750cf27d97189b3974bf4e7',//注册的Client Secret
       autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
     }], // 评论
+    ["copyright", {
+      noCopy: false,  // 设置为true, 不允许复制
+      minLength: 100,
+      authorName: "Jerry的博客-Jerry",
+      clipboardComponent: ".vuepress/components/clipboardComponent.vue"
+    }],
     '@vuepress/pwa',
     {
       serviceWorker: true,
