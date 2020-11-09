@@ -12,3 +12,5 @@
 ## Typescript
 
 - [实现ArrayList](./typescript/arrayList.md)
+
+<Vssue :title="$title" />

@@ -16,3 +16,5 @@
   - 常用开发工具：VS Code、idea、git
   - 熟悉UI框架：Element UI
   - 具备良好的编码风格和习惯，团队规范意识，乐于分享
+
+<Vssue :title="$title" />
