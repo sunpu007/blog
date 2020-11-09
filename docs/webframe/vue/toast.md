@@ -67,3 +67,5 @@ v-toast.scss
 ```javascript
 Vue.VToast('massage', 1500)
 ```
+
+<Vssue :title="$title" />

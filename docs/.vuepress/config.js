@@ -67,6 +67,15 @@ module.exports = {
     ['@vuepress/back-to-top'], // 返回顶部
     ['@vuepress/nprogress'], // 加载进度条
     ['@vuepress/medium-zoom'],
+    ['@vssue/vuepress-plugin-vssue', {
+      platform: 'github-v4', //v3的platform是github，v4的是github-v4
+      locale: 'zh', //语言
+      owner: 'sunpu007', //github账户名
+      repo: 'blog', //github一个项目的名称
+      clientId: 'cf4688b75929f82666bd',//注册的Client ID
+      clientSecret: '2556e373875d899e7750cf27d97189b3974bf4e7',//注册的Client Secret
+      // autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
+    }], // 评论
     '@vuepress/pwa',
     {
       serviceWorker: true,

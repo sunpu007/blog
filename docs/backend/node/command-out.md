@@ -94,3 +94,5 @@ req.on('response', function(res){
 });
 req.end();
 ```
+
+<Vssue :title="$title" />
