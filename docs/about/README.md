@@ -10,6 +10,7 @@
   - Vue
   - Node
   - Java
+  - Spring Boot
   - Mysql Redis
   - Linux
 - 其他：
