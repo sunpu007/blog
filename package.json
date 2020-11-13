@@ -10,7 +10,7 @@
     "docs:build": "vuepress build docs"
   },
   "devDependencies": {
-    "@vssue/api-github-v4": "^1.4.0",
+    "@vssue/api-github-v3": "^1.4.4",
     "@vssue/vuepress-plugin-vssue": "^1.4.6",
     "@vuepress/plugin-back-to-top": "^1.7.1",
     "@vuepress/plugin-medium-zoom": "^1.0.0-rc.1",

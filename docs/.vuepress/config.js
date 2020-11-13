@@ -68,7 +68,7 @@ module.exports = {
     ['@vuepress/nprogress'], // 加载进度条
     ['@vuepress/medium-zoom'],
     ['@vssue/vuepress-plugin-vssue', {
-      platform: 'github-v4', //v3的platform是github，v4的是github-v4
+      platform: 'github', //v3的platform是github，v4的是github-v4
       locale: 'zh', //语言
       owner: 'sunpu007', //github账户名
       repo: 'blog', //github一个项目的名称
