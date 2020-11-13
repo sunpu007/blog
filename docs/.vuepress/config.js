@@ -6,6 +6,10 @@ module.exports = {
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     ['link', { rel: 'manifest', href: '/manifest.json' }],
   ],
+  // 显示行号
+  // markdown: {
+  //   lineNumbers: true,
+  // },
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
