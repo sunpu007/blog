@@ -56,6 +56,9 @@ module.exports = {
           ]
         },
       ],
+      '/server/': [
+        '/server/nginx.md',
+      ],
       '/about/': [
         {
           title: '',
