@@ -57,7 +57,13 @@ module.exports = {
         },
       ],
       '/server/': [
-        '/server/nginx.md',
+        {
+          title: '工具',
+          collapsable: false,
+          children: [
+            '/server/tool/nginx.md'
+          ]
+        },
       ],
       '/about/': [
         {
