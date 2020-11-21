@@ -8,7 +8,7 @@ $ yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
 
 > 安装Nginx
 
-下载Nginx，下载地址：[http://nginx.org/en/download.html](http://nginx.org/en/download.html)
+下载Nginx，下载地址：[https://nginx.org/en/download.html](https://nginx.org/en/download.html)
 
 ![image-20201121153734585](https://cdn-blog.myjerry.cn/image-20201121153734585.png)
 
@@ -16,7 +16,7 @@ $ yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
 
 ```sh
 $ cd /usr/local/
-$ wget http://nginx.org/download/nginx-1.18.0.tar.gz
+$ wget https://nginx.org/download/nginx-1.18.0.tar.gz
 ```
 
 解压安装包
