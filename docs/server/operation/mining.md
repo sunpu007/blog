@@ -20,7 +20,7 @@
 
 > 处理挖矿进程
 
-1. 执行` perf top -s comm,pid,symbol`找到占用较高进程
+1. 执行`perf top -s comm,pid,symbol`找到占用较高进程
 2. 根据`/proc/pid`找到执行文件所在地
 3. 执行`sudo kil -9 ${pid}`杀掉进程（一般会有两个进程）
 4. 删除执行文件整个目录
