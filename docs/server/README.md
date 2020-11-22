@@ -4,4 +4,8 @@
 
 - [Centos安装Nginx](./tool/nginx.md)
 
+## 运维
+
+- [记录一次服务器被挖矿修复](./operation/mining.md)
+
 <Vssue :title="$title" />

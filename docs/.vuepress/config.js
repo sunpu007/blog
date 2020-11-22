@@ -64,6 +64,13 @@ module.exports = {
             '/server/tool/nginx.md'
           ]
         },
+        {
+          title: '运维',
+          collapsable: false,
+          children: [
+            '/server/operation/mining.md'
+          ]
+        },
       ],
       '/about/': [
         {
