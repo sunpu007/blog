@@ -61,7 +61,8 @@ module.exports = {
           title: '工具',
           collapsable: false,
           children: [
-            '/server/tool/nginx.md'
+            '/server/tool/nginx.md',
+            '/server/tool/node.md'
           ]
         },
         {
