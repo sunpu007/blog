@@ -1,4 +1,4 @@
-# centos 安装Node环境
+# centos安装Node环境
 
 > 安装编译工具及库文件
 
