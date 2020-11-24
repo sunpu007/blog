@@ -1,3 +1,6 @@
+const clientId = process.env.GITHUB_CLIENT_ID;
+const clientSecret = process.env.GITHUB_CLIENT_SECRET;
+
 module.exports = {
   title: 'Jerry的博客',
   description: '专注于前后端技术，从前端到后端再到数据库',
@@ -94,8 +97,8 @@ module.exports = {
       locale: 'zh', //语言
       owner: 'sunpu007', //github账户名
       repo: 'blog', //github一个项目的名称
-      clientId: process.env.GITHUB_CLIENT_ID,//注册的Client ID
-      clientSecret: process.env.GITHUB_CLIENT_SECRET,//注册的Client Secret
+      clientId,//注册的Client ID
+      clientSecret,//注册的Client Secret
       autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
     }], // 评论
     ["copyright", {
