@@ -4,7 +4,7 @@ module.exports = {
   dest: './dist',
   head: [
     ['link', { rel: 'icon', href: `/favicon.ico` }],
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    // ['link', { rel: 'manifest', href: '/manifest.json' }],
   ],
   // 显示行号
   // markdown: {
@@ -104,10 +104,10 @@ module.exports = {
       authorName: "Jerry的博客-Jerry",
       clipboardComponent: ".vuepress/components/clipboardComponent.vue"
     }],
-    '@vuepress/pwa',
-    {
-      serviceWorker: true,
-      updatePopup: true,
-    },
+    // '@vuepress/pwa',
+    // {
+    //   serviceWorker: true,
+    //   updatePopup: true,
+    // },
   ]
 }
