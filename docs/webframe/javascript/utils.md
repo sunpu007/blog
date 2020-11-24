@@ -354,4 +354,40 @@ function fetchOS() {
 }
 ```
 
+> 判断对象数组中是否存在指定键值对
+
+```javascript
+function arrayIsExistKeyValue(arr, key, value) {
+  if (arr.length > 0) {
+    return arr.some(item => item[key] === value);
+  }
+  return false;
+}
+```
+
+> 获取对象数组中指定键值对下标
+
+```javascript
+function getArrayKeyValueIndex(arr, key, value) {
+  if (arr.length > 0) {
+    return arr.findIndex(item => item[key] === value);
+  }
+  return -1;
+}
+```
+
+> 解析`QueryString`参数
+
+```javascript
+function parsingParams(queryString) {
+  const params = queryString.split('&');
+  const obj = {};
+  for (const item of params) {
+    const items = item.split('=');
+    obj[items[0]] = items[1];
+  }
+  return obj;
+}
+```
+
 <Vssue :title="$title" />

@@ -1,10 +1,13 @@
+const clientId = process.env.GITHUB_CLIENT_ID;
+const clientSecret = process.env.GITHUB_CLIENT_SECRET;
+
 module.exports = {
   title: 'Jerry的博客',
   description: '专注于前后端技术，从前端到后端再到数据库',
   dest: './dist',
   head: [
     ['link', { rel: 'icon', href: `/favicon.ico` }],
-    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    // ['link', { rel: 'manifest', href: '/manifest.json' }],
   ],
   // 显示行号
   // markdown: {
@@ -62,7 +65,9 @@ module.exports = {
           collapsable: false,
           children: [
             '/server/tool/nginx.md',
-            '/server/tool/node.md'
+            '/server/tool/node.md',
+            '/server/tool/mongodb.md',
+            '/server/tool/redis.md'
           ]
         },
         {
@@ -93,8 +98,8 @@ module.exports = {
       locale: 'zh', //语言
       owner: 'sunpu007', //github账户名
       repo: 'blog', //github一个项目的名称
-      clientId: 'cf4688b75929f82666bd',//注册的Client ID
-      clientSecret: '2556e373875d899e7750cf27d97189b3974bf4e7',//注册的Client Secret
+      clientId,//注册的Client ID
+      clientSecret,//注册的Client Secret
       autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
     }], // 评论
     ["copyright", {
@@ -103,10 +108,10 @@ module.exports = {
       authorName: "Jerry的博客-Jerry",
       clipboardComponent: ".vuepress/components/clipboardComponent.vue"
     }],
-    '@vuepress/pwa',
-    {
-      serviceWorker: true,
-      updatePopup: true,
-    },
+    // '@vuepress/pwa',
+    // {
+    //   serviceWorker: true,
+    //   updatePopup: true,
+    // },
   ]
 }
