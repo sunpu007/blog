@@ -113,5 +113,9 @@ module.exports = {
     //   serviceWorker: true,
     //   updatePopup: true,
     // },
+    {
+      name: 'page-plugin',
+      globalUIComponents: ['fixed'],
+    },
   ]
 }
