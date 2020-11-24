@@ -66,7 +66,8 @@ module.exports = {
           children: [
             '/server/tool/nginx.md',
             '/server/tool/node.md',
-            '/server/tool/mongodb.md'
+            '/server/tool/mongodb.md',
+            '/server/tool/redis.md'
           ]
         },
         {
