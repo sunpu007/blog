@@ -62,7 +62,8 @@ module.exports = {
           collapsable: false,
           children: [
             '/server/tool/nginx.md',
-            '/server/tool/node.md'
+            '/server/tool/node.md',
+            '/server/tool/mongodb.md'
           ]
         },
         {
