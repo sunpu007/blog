@@ -38,7 +38,8 @@ module.exports = {
           collapsable: false,
           children: [
             '/webframe/vue/toast.md',
-            '/webframe/vue/svg.md'
+            '/webframe/vue/svg.md',
+            '/webframe/vue/vue-cli.md'
           ]
         },
         {
