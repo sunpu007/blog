@@ -489,3 +489,4 @@ npm addUser  // 填写账号密码
 npm publish  // 已经发布成功
 ```
 
+*源码地址：[https://github.com/sunpu007/vue-cli](https://github.com/sunpu007/vue-cli)*
