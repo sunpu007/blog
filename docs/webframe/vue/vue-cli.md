@@ -362,3 +362,5 @@ await ncp(dest, path.join(path.resolve(), projectName))
 ```
 
 这样就创建了一个简单的模版项目
+
+*未完...*
