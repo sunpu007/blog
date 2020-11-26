@@ -7,12 +7,15 @@
 > 所需依赖包
 
 - **commander** 参数解析 如：-V、--help
+- **axios** 接口调用
 - **inquirer** 交互式命令行工具
 - **download-git-repo** 下载并提取git存储库
 - **metalsmith** 读取所有文件,实现模板渲染
 - **consolidate** 统一模板引擎
 - **ncp** 异步递归文件和目录复制
 - **ora** loading加载器
+- **ejs** 模版编译
+- **util** 工具方法
 
 > 目录结构
 
@@ -363,4 +366,126 @@ await ncp(dest, path.join(path.resolve(), projectName))
 
 这样就创建了一个简单的模版项目
 
-*未完...*
+> 复杂模版下载
+
+通常用户可以定制下载模版的内容，例如`package.json`文件，用户可以根据提示设置项目名、描述等。项目模版中增加了`ask.js`文件
+
+```js
+module.exports = [
+	{
+		type: 'confirm',
+    name: 'private',
+    message: 'ths resgistery is private?',
+  },
+  {
+    type: 'input',
+    name: 'author',
+    message: 'author?',
+  },
+  {
+    type: 'input',
+    name: 'description',
+    message: 'description?',
+  },
+  {
+    type: 'input',
+    name: 'license',
+    message: 'license?',
+  },
+]
+```
+
+根据对应的询问生成最终的`package.js`
+
+安装需要的模块
+
+```sh
+npm i metalsmith ejs consolidate --save-dev
+```
+
+```js
+// create.js
+let { render } = require('consolidate').ejs;
+render = promisify(render);
+const Metalsmith = require('metalsmith');
+
+...
+if (!fs.existsSync(path.join(dest, 'ask.js'))) {
+  // 简单模版 -> 拷贝文件
+  await ncp(dest, path.resolve(projectName))
+} else {
+  await new Promise((resolve, reject) => {
+    Metalsmith(__dirname)
+      .source(dest)
+      .destination(path.resolve(projectName))
+      .use(async (files, metal, done) => {
+        // 读取ask.js文件
+        const args = require(path.join(dest, 'ask.js'));
+        const obj = await Inquirer.prompt(args);
+
+        // 下传用户选择信息
+        const meta = metal.metadata();
+        Object.assign(meta, obj);
+        
+        // 删除ask.js文件
+        delete files['ask.js'];
+
+        done();
+      })
+      .use(async (files, metal, done) => {
+        // 获取用户填写的信息渲染模版
+        const obj = metal.metadata();
+        Reflect.ownKeys(files).forEach(async file => {
+          // 只处理js和json文件
+          if (file.includes('.js') || file.includes('.json')) {
+            // 获取文件内容
+            let content = files[file].contents.toString();
+            // 判断是否存在模版变量
+            if (content.includes('<%')) {
+              content = await render(content, obj);
+              // 渲染
+              files[file].contents = Buffer.from(content);
+            }
+          }
+        });
+        done();
+      })
+      .build(error => {
+        if (error) {
+          reject();
+        } else {
+          resolve();
+        }
+      });
+  })
+}
+...
+```
+
+> 优化
+
+判断当前目录是否存在相同的文件夹
+
+```js
+...
+// 判断当前目录下是否存在相同文件夹
+if (fs.existsSync(path.resolve(projectName))) {
+  // throw new Error('存在相同目录');
+  const { flge } = await Inquirer.prompt({
+    name: 'flge',
+    type: 'confirm',
+    message: 'Project directory exists, do you want to override it?'
+  })
+  if (!flge) return false;
+}
+...
+```
+
+> 发布工具
+
+```sh
+nrm use npm  // 准备发布包
+npm addUser  // 填写账号密码
+npm publish  // 已经发布成功
+```
+
