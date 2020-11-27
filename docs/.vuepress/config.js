@@ -66,7 +66,7 @@ module.exports = {
           title: '数据结构',
           collapsable: false,
           children: [
-            '/datastructure-algorithm/data-structure/arrayList.md'
+            '/datastructure-algorithm/data-structure/typescript-arrayList.md'
           ]
         },
       ],

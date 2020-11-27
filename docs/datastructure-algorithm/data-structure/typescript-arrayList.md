@@ -1,4 +1,4 @@
-# 实现ArrayList
+# 使用Typescript实现ArrayList
 
 > 完整代码
 
