@@ -18,6 +18,7 @@ module.exports = {
       { text: '主页', link: '/' },
       { text: '前端', link: '/webframe/' },
       { text: '后端', link: '/backend/' },
+      { text: '数据结构与算法', link: '/datastructure-algorithm/' },
       { text: '服务器', link: '/server/' },
       { text: '关于我', link: '/about/' },
       { text: 'github', link: 'https://github.com/sunpu007/blog' }
@@ -42,13 +43,13 @@ module.exports = {
             '/webframe/vue/vue-cli.md'
           ]
         },
-        {
-          title: 'Typescript',
-          collapsable: false,
-          children: [
-            '/webframe/typescript/arrayList.md'
-          ]
-        },
+        // {
+        //   title: 'Typescript',
+        //   collapsable: false,
+        //   children: [
+        //     '/webframe/typescript/arrayList.md'
+        //   ]
+        // },
       ],
       '/backend/': [
         {
@@ -57,6 +58,15 @@ module.exports = {
           children: [
             '/backend/node/download-file.md',
             '/backend/node/command-out.md'
+          ]
+        },
+      ],
+      '/datastructure-algorithm/': [
+        {
+          title: '数据结构',
+          collapsable: false,
+          children: [
+            '/datastructure-algorithm/data-structure/arrayList.md'
           ]
         },
       ],
