@@ -2,8 +2,12 @@
   <div class="fixed_container">
     <div class="tencent_code">
       <h4>添加微信</h4>
-      <p>获取阿里云优惠</p>
+      <p>获取阿里云更多优惠</p>
       <img src="https://cdn-blog.myjerry.cn/wechat-accout-img.jpg" alt="" />
+    </div>
+    <div class="tencent_code">
+      <p>阿里云最新活动</p>
+      <img src="https://cdn-blog.myjerry.cn/aliyun-202012021638.png" alt="" />
     </div>
   </div>
 </template>
