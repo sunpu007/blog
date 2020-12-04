@@ -13,5 +13,3 @@ features:
 footer: 陕ICP备17007879号 | Copyright © 2017-present Jerry
 ---
 
-<!-- ### 技术栈预览图 -->
-

@@ -18,6 +18,6 @@
   - 熟悉UI框架：Element UI
   - 具备良好的编码风格和习惯，团队规范意识，乐于分享
 - 开源贡献：
-  - 谷歌身份验证器[egg-google-auth](https://github.com/sunpu007/egg-google-auth)
+  - 谷歌身份验证器：[egg-google-auth](https://github.com/sunpu007/egg-google-auth)
 
 <Vssue :title="$title" />
