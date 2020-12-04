@@ -8,6 +8,7 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     // ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['script', { src: '/common.js' }]
   ],
   // 显示行号
   // markdown: {

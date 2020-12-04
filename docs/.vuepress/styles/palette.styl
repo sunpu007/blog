@@ -2,3 +2,28 @@
   margin: 0 1rem;
   max-width: 800px
 }
+
+.click-span {
+  font-size: 14px;
+  position: fixed;
+  z-index: 999;
+  animation: span-animation 1.5s linear;
+  opacity: 0;
+}
+@keyframes span-animation {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.5) translateY(-100px);
+  }
+  98% {
+    display: none;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1) translateY(-200px);
+  }
+}
