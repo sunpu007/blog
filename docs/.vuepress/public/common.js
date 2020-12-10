@@ -1,7 +1,7 @@
 window.addEventListener('click', (e) => {
   const span = document.createElement('span');
   span.setAttribute('class', 'click-span');
-  span.innerText = 'Jerry的博客';
+  span.innerText = '❤️';
 
   const r = Math.floor( Math.random() * 256 );
   const g = Math.floor( Math.random() * 256 );    
