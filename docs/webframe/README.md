@@ -3,6 +3,7 @@
 ## Javascript
 
 - [常见Js工具方法](./javascript/utils.md)
+- [代码片段](./javascript/code-snippet.md)
 
 ## Vue
 

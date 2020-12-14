@@ -32,7 +32,8 @@ module.exports = {
           title: 'Javascript',
           collapsable: false,
           children: [
-            '/webframe/javascript/utils.md'
+            '/webframe/javascript/utils.md',
+            '/webframe/javascript/code-snippet.md'
           ]
         },
         {
