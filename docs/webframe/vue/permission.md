@@ -68,7 +68,7 @@ CREATE TABLE `sys_roles_menus`  (
 实现登录后的用户菜单路由表获取
 
 ```js
-// app\service\loginService.js
+// app/service/loginService.js
 // 生成菜单
 async generateMenu(adminId) {
   let routers = await this.app.mysql.query('SELECT * FROM sys_menu WHERE menu_id IN (SELECT sys_roles_menus.menu_id FROM sys_admin, sys_roles_menus WHERE sys_admin.role_id = sys_roles_menus.role_id AND sys_admin.admin_id = ?) OR pid = 0', [ adminId ]);
@@ -109,7 +109,7 @@ async generateMenu(adminId) {
 实现管理员的增删改查
 
 ```js
-// app\routers\system.js
+// app/routers/system.js
 // 获取管理员账号
 router.get(`${config.contextPath}/system/admin/list`, checkTokenHandler, controller.system.adminList);
 // 编辑/新增管理员账号
@@ -119,7 +119,7 @@ router.post(`${config.contextPath}/system/admin/delete`, checkTokenHandler, cont
 // 重置管理员密码
 router.post(`${config.contextPath}/system/admin/pwd/reset`, checkTokenHandler, controller.system.resetAdminPwd);
 
-// app\controller\system.js
+// app/controller/system.js
 /**
  * 获取管理员账号
  */
@@ -146,7 +146,7 @@ async deleteAdmin() {
   ctx.body = setResult();
 }
 
-// app\service\systemService.js
+// app/service/systemService.js
 // 获取管理员账号
 async adminList() {
   return await this.app.mysql.query(`SELECT admin.admin_id adminId, admin.username username, admin.avatar_url avatarUrl, admin.status status, admin.role_id roleId,
@@ -195,7 +195,7 @@ async resetAdminPwd(username, { adminId }) {
 实现菜单的增删改查
 
 ```js
-// app\routers\system.js
+// app/routers/system.js
 // 获取菜单列表
 router.get(`${config.contextPath}/system/menu/list`, checkTokenHandler, controller.system.menuList);
 // 编辑菜单
@@ -203,7 +203,7 @@ router.post(`${config.contextPath}/system/menu/edit`, checkTokenHandler, control
 // 删除菜单
 router.post(`${config.contextPath}/system/menu/delete`, checkTokenHandler, controller.system.deleteMenu);
 
-// app\controller\system.js
+// app/controller/system.js
 /**
  * 获取菜单列表
  */
@@ -231,7 +231,7 @@ async deleteMenu() {
   ctx.body = setResult();
 }
 
-// app\service\systemService.js
+// app/service/systemService.js
 // 获取菜单列表
 async menuList() {
   const routers = await this.app.mysql.select('sys_menu', { where: { status: 0 } });
@@ -276,7 +276,7 @@ async deleteMenu(username, { menu_id }) {
 实现角色的增删改查
 
 ```js
-// app\routers\system.js
+// app/routers/system.js
 // 获取角色列表
 router.get(`${config.contextPath}/system/role/list`, checkTokenHandler, controller.system.roleList);
 // 编辑角色
@@ -284,7 +284,7 @@ router.post(`${config.contextPath}/system/role/edit`, checkTokenHandler, control
 // 编辑角色菜单
 router.post(`${config.contextPath}/system/role/menu/edit`, checkTokenHandler, controller.system.editRoleMenu);
 
-// app\controller\system.js
+// app/controller/system.js
 /**
  * 获取角色列表
  */
@@ -311,7 +311,7 @@ async editRoleMenu() {
   ctx.body = setResult();
 }
 
-// app\service\systemService.js
+// app/service/systemService.js
 // 获取角色列表
 async roleList() {
   const list = await this.app.mysql.query('SELECT sys_role.*, IFNULL(GROUP_CONCAT(sys_roles_menus.menu_id), \'\') menus FROM sys_role LEFT JOIN sys_roles_menus ON (sys_roles_menus.role_id = sys_role.role_id) GROUP BY sys_role.role_id');
@@ -958,9 +958,9 @@ export default {
 
 > 项目地址
 
-前端：[admin-web](https://github.com/sunpu007/admin-web)
+前端源码：[admin-web](https://github.com/sunpu007/admin-web)
 
-服务端：[admin-server](https://github.com/sunpu007/admin-server)
+服务端源码：[admin-server](https://github.com/sunpu007/admin-server)
 
 预览地址：[admin-demo](http://admin-demo.myjerry.cn)
 

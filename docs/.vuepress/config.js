@@ -60,7 +60,8 @@ module.exports = {
           collapsable: false,
           children: [
             '/backend/node/download-file.md',
-            '/backend/node/command-out.md'
+            '/backend/node/command-out.md',
+            '/backend/node/job.md'
           ]
         },
       ],
