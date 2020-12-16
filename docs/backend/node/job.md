@@ -141,7 +141,14 @@ class TaskService extends Service {
   }
   // 删除定时任务
   async deleteSchedule({ job_id }) {
-    await this.app.mysql.delete('schedule_job', { job_id });
+    const result = await this.app.mysql.delete('schedule_job', { job_id });
+    if (result.affectedRows === 1) {
+      const schedule = await this.app.mysql.get('schedule_job', { job_id });
+      if (schedule.status === SCHEDULE_STATUS.RUN) {
+        // 停止任务
+        await this.ctx.helper.cancelSchedule(schedule.jobName);
+      }
+    }
   }
   // 更新定时任务状态
   async updateStatusSchedule({ job_id, status }) {
@@ -282,20 +289,22 @@ async runSchedule() {
 // app/service/taskService.js
 // 修改/新增定时任务
 async editSchedule(userName, { job_id, cron, jobName, jobHandler, params = '', description = '' }) {
-  ...
-  const schedule = await this.app.mysql.get('schedule_job', { job_id });
-  // 此处在版本允许的情况下可使用可选链操作符`?`
-  if (schedule && schedule.status === SCHEDULE_STATUS.RUN) {
-    // 启动状态下重置任务
-    await this.ctx.helper.cancelSchedule(jobName);
-    await this.ctx.helper.generateSchedule(job_id, cron, jobName, jobHandler);
+  if (result.affectedRows === 1) {
+    const schedule = await this.app.mysql.get('schedule_job', { job_id });
+    // 此处在版本允许的情况下可使用可选链操作符`?`
+    if (schedule && schedule.status === SCHEDULE_STATUS.RUN) {
+      // 启动状态下重置任务
+      await this.ctx.helper.cancelSchedule(jobName);
+      await this.ctx.helper.generateSchedule(job_id, cron, jobName, jobHandler);
+    }
   }
 }
 // 更新定时任务状态
 async updateStatusSchedule({ job_id, status }) {
-  ...
-  const schedule = await this.app.mysql.get('schedule_job', { job_id });
-  if (schedule !== null) {
+  const result = await this.app.mysql.update('schedule_job', { status }, { where: { job_id } });
+  // 判断是否更新成功
+  if (result.affectedRows === 1) {
+    const schedule = await this.app.mysql.get('schedule_job', { job_id });
     if (status === SCHEDULE_STATUS.RUN) {
       // 启动任务
       await this.ctx.helper.generateSchedule(job_id, schedule.cron, schedule.jobName, schedule.jobHandler);
