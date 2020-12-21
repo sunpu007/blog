@@ -6,6 +6,7 @@ module.exports = {
   description: '专注于前后端技术，从前端到后端再到数据库',
   dest: './dist',
   head: [
+    [ 'meta', { name: 'keywords', content: 'sunpu,Jerry,sp,jerry,sun,孙谱-前端开发工程师,孙谱,孙谱-前端,孙谱-全栈,孙谱-陕西西安,孙谱-西安,孙谱-全栈工程师' } ],
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     // ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['script', { src: '/common.js' }]
