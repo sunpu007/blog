@@ -72,7 +72,7 @@ module.exports = {
           collapsable: false,
           children: [
             '/datastructure-algorithm/data-structure/typescript-arrayList.md',
-            '/datastructure-algorithm/data-structure/typescript-arrayList.md'
+            '/datastructure-algorithm/data-structure/typescript-linkedList.md'
           ]
         },
       ],
