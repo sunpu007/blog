@@ -7,21 +7,21 @@ class Node {
   /**
    * 上一个节点
    */
-  private prev: Node;
+  private prev: Node | null = null;
   /**
    * 当前节点信息
    */
-  private data: object;
+  private data: any;
   /**
    * 下一个节点
    */
-  private next: Node;
+  private next: Node | null = null;
 
   public getPrev() {
     return this.prev;
   }
 
-  public setPrev(prev: Node) {
+  public setPrev(prev: Node | null) {
     return this.prev = prev;
   }
 
@@ -29,7 +29,7 @@ class Node {
     return this.data;
   }
 
-  public setData(data: object) {
+  public setData(data: any) {
     return this.data = data;
   }
 
@@ -37,7 +37,7 @@ class Node {
     return this.next;
   }
 
-  public setNext(next: Node) {
+  public setNext(next: Node | null) {
     return this.next = next;
   }
 }
@@ -46,22 +46,22 @@ class LinkedList {
   /**
    * 开始节点
    */
-  private first: Node;
+  private first: Node | null = null;
   /**
    * 最后节点
    */
-  private last: Node;
+  private last: Node | null = null;
 
   /**
    * 长度
    */
-  private size: number
+  private size: number = 0
 
   /**
    * 往最后添加节点
    * @param data 节点信息
    */
-  public add(data: object): void {
+  public add(data: any): void {
     const n: Node = new Node();
     if (this.first === null) {
       n.setPrev(null);
@@ -75,7 +75,7 @@ class LinkedList {
       n.setData(data);
       n.setNext(null);
 
-      this.last.setNext(n);
+      this.last!.setNext(n);
 
       this.last = n;
     }
@@ -87,7 +87,7 @@ class LinkedList {
    * @param index 节点位置
    * @param data 节点信息
    */
-  public addToIndex(index: number, data: object): void {
+  public addToIndex(index: number, data: any): void {
     this.rangeCheck(index);
 
     const n = this.node(index);
@@ -97,7 +97,7 @@ class LinkedList {
 
     if (n !== null) {
       const prev = n.getPrev();
-      prev.setNext(newNode);
+      prev!.setNext(newNode);
       newNode.setPrev(prev);
 
       n.setPrev(newNode);
@@ -111,29 +111,29 @@ class LinkedList {
    * 移除指定位置的节点
    * @param index 节点位置
    */
-  public remove(index: number): object {
-    const n: Node = this.node(index);
+  public remove(index: number): any {
+    const n: Node | null = this.node(index);
 
     if (n != null) {
       const prev = n.getPrev();
       const next = n.getNext();
 
-      prev.setNext(next);
-      next.setPrev(prev);
+      prev!.setNext(next);
+      next!.setPrev(prev);
 
       this.size--;
     }
 
-    return n.getData();
+    return n!.getData();
   }
 
   /**
    * 获取指定位置节点信息
    * @param index 节点位置
    */
-  public get(index: number): object {
+  public get(index: number): any {
     this.rangeCheck(index);
-    return this.node(index).getData();
+    return this.node(index)!.getData();
   }
 
   /**
@@ -141,19 +141,34 @@ class LinkedList {
    * @param index 节点位置
    * @param data 节点信息
    */
-  public set(index: number, data: object): void {
+  public set(index: number, data: any): void {
     this.rangeCheck(index);
 
-    const n: Node = this.node(index);
+    const n: Node | null = this.node(index);
     if (n !== null) n.setData(data);
   }
 
-  private node(index: number): Node {
-    let n: Node = null;
+  public [Symbol.iterator](): any {
+    const that = this;
+    let currentNode: Node | null = null;
+    return {
+      next() {
+        currentNode = currentNode ? currentNode.getNext() : that.first;
+        if (currentNode !== null) {
+          return { value: currentNode.getData(), done: false };
+        } else {
+          return { value: undefined, done: true };
+        }
+      }
+    }
+  }
+
+  private node(index: number): Node | null {
+    let n: Node | null = null;
     if (this.first !== null) {
       n = this.first;
       for (let i: number = 0; i < index; i++) {
-        n = n.getNext();
+        n = n!.getNext();
       }
     }
     return n
