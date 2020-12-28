@@ -87,13 +87,13 @@ module.exports = {
             '/server/tool/redis.md'
           ]
         },
-        {
-          title: '运维',
-          collapsable: false,
-          children: [
-            '/server/operation/mining.md'
-          ]
-        },
+        // {
+        //   title: '运维',
+        //   collapsable: false,
+        //   children: [
+        //     '/server/operation/mining.md'
+        //   ]
+        // },
       ],
       '/about/': [
         {
