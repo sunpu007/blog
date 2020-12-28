@@ -2,7 +2,7 @@
 
 > 获取url指定参数
 
-```javascript
+```js
 function QueryString(val) {
   var uri = window.location.search;
   var re = new RegExp("[?&]" + val + "=([^&?]*)", "ig");
@@ -12,7 +12,7 @@ function QueryString(val) {
 
 > 获取url所有参数
 
-```javascript
+```js
 function getQueryObject(url) {
   url = url == null ? window.location.href : url
   const search = url.substring(url.lastIndexOf('?') + 1)
@@ -31,7 +31,7 @@ function getQueryObject(url) {
 
 > 验证手机号
 
-```javascript
+```js
 function checkMobile(mobile) {
   if (mobile === null || mobile.toString() === '') {
     return false
@@ -46,7 +46,7 @@ function checkMobile(mobile) {
 
 > 时间格式化
 
-```javascript
+```js
 function formatDeta(time, formatStr) {
   const date = new Date(time)
   const o = {
@@ -68,7 +68,7 @@ function formatDeta(time, formatStr) {
 
 > 对象克隆
 
-```javascript
+```js
 function deepClone(source) {
   if (!source && typeof source !== 'object') {
     throw new Error('error arguments', 'deepClone')
@@ -87,7 +87,7 @@ function deepClone(source) {
 
 > 根据生日获取年龄
 
-```javascript
+```js
 function getAge(birthday) {
   const year = new Date(birthday).getFullYear();
   const curYear = new Date().getFullYear();
@@ -97,7 +97,7 @@ function getAge(birthday) {
 
 > 查询数组中指定元素下标
 
-```javascript
+```js
 function findArray(array, feature, all = true) {
   for (const index in array) {
     const cur = array[index];
@@ -124,7 +124,7 @@ function findArray(array, feature, all = true) {
 
 > 获取昨天
 
-```javascript
+```js
 function getYesterDate(time) {
   const date = time ? new Date(time) : new Date();
   date.setTime(date.getTime() - 24 * 60 * 60 * 1000);
@@ -134,7 +134,7 @@ function getYesterDate(time) {
 
 > 自定义异常
 
-```javascript
+```js
 function VideoError(code, msg) {
   this.code = code;
   this.messages = msg;
@@ -145,7 +145,7 @@ VideoError.prototype.constructor = VideoError;
 
 > 判断是否为对象
 
-```javascript
+```js
 function isPlainObject(obj) {
   return toString.call(obj) === '[object Object]';
 }
@@ -153,7 +153,7 @@ function isPlainObject(obj) {
 
 > 判断是否为数组
 
-```javascript
+```js
 function isPlainArray(obj) {
   return toString.call(obj) === '[object Array]';
 }
@@ -161,7 +161,7 @@ function isPlainArray(obj) {
 
 > 重命名对象key值(下划线转驼峰)
 
-```javascript
+```js
 function formatResult(obj) {
   if (!obj) return {};
   let resObj;
@@ -191,7 +191,7 @@ function formatResult(obj) {
 
 > 模版字符串替换
 
-```javascript
+```js
 function formatStr(str, ...args) {
   if (str === '') return '';
   for (const i in args) {
@@ -203,7 +203,7 @@ function formatStr(str, ...args) {
 
 > 获取周数(周一为第一天)
 
-```javascript
+```js
 function getNowWeek(date) {
   // 截掉时分秒保留整数天
   date = new Date((date || new Date()).toLocaleDateString());
@@ -221,7 +221,7 @@ function getNowWeek(date) {
 
 > 获取字段类型
 
-```javascript
+```js
 function getFieldType(field) {
   const map = {
     '[object Boolean]': 'boolean',
@@ -241,7 +241,7 @@ function getFieldType(field) {
 
 > 判断当前是时分是否在配置的时间范围内
 
-```javascript
+```js
 function judgeNowComeWithIn(openTime, closetTime) {
   const currTime = new Date().getTime();
   const openTimes = openTime.split(':'),
@@ -255,7 +255,7 @@ function judgeNowComeWithIn(openTime, closetTime) {
 
 > 防抖
 
-```javascript
+```js
 function debounce(func, wait, immediate) {
   let timeout, args, context, timestamp, result
 
@@ -294,7 +294,7 @@ function debounce(func, wait, immediate) {
 
 > 移动端计算根元素字体大小
 
-```javascript
+```js
 (function (doc, win) {
   var docEl = doc.documentElement,
     resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
@@ -311,7 +311,7 @@ function debounce(func, wait, immediate) {
 
 > 自定义异常
 
-```javascript
+```js
 function BlogError(code, msg) {
   this.code = code;
   this.message = msg;
@@ -322,7 +322,7 @@ BlogError.prototype.constructor = BlogError;
 
 > 验证手机号码
 
-```javascript
+```js
 function checkMobile(mobile) {
   if (mobile === null || mobile === '') return false;
   if ((/^1[34578]\d{9}$/.test(mobile))) {
@@ -335,7 +335,7 @@ function checkMobile(mobile) {
 
 > 获取系统类型
 
-```javascript
+```js
 function fetchOS() {
   var sUserAgent = navigator.userAgent;
   var isWin = (navigator.platform == "Win32") || (navigator.platform == "Windows");
@@ -356,7 +356,7 @@ function fetchOS() {
 
 > 判断对象数组中是否存在指定键值对
 
-```javascript
+```js
 function arrayIsExistKeyValue(arr, key, value) {
   if (arr.length > 0) {
     return arr.some(item => item[key] === value);
@@ -367,7 +367,7 @@ function arrayIsExistKeyValue(arr, key, value) {
 
 > 获取对象数组中指定键值对下标
 
-```javascript
+```js
 function getArrayKeyValueIndex(arr, key, value) {
   if (arr.length > 0) {
     return arr.findIndex(item => item[key] === value);
@@ -378,7 +378,7 @@ function getArrayKeyValueIndex(arr, key, value) {
 
 > 解析`QueryString`参数
 
-```javascript
+```js
 function parsingParams(queryString) {
   const params = queryString.split('&');
   const obj = {};
@@ -388,6 +388,12 @@ function parsingParams(queryString) {
   }
   return obj;
 }
+```
+
+> 验证变量类型
+
+```js
+const isType = type => obj => Object.prototype.toString.call(obj) === `[object ${type}]`;
 ```
 
 <Vssue :title="$title" />

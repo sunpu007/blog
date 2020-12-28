@@ -20,3 +20,17 @@ function myNew(fn, ...args) {
   return isObject || isFunction ? result : tempObj;
 }
 ```
+
+> 手写Bind
+
+```js
+Function.prototype.myBind = function(context) {
+  if (typeof context === "undefined" || context === null) {
+    context = window;
+  }
+  const self = this;
+  return function() {
+    return self.apply(context, arguments);
+  };
+}
+```
