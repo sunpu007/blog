@@ -34,3 +34,24 @@ Function.prototype.myBind = function(context) {
   };
 }
 ```
+
+> 实现函数柯里化
+
+```js
+const createCurry = (fn, ...args) => {
+  const arr = args || [];
+  const length = fn.length;
+
+  return (...res) => {
+    const newArr = arr.splice(0);
+    newArr.push(...res);
+    if (newArr.length === length) {
+      return fn.apply(this, newArr);
+    } else if (newArr.length < length) {
+      return createCurry.call(this, fn, ...newArr);
+    }
+  }
+}
+```
+
+<Vssue :title="$title" />
