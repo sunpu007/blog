@@ -45,10 +45,10 @@ const createCurry = (fn, ...args) => {
   return (...res) => {
     const newArr = arr.splice(0);
     newArr.push(...res);
-    if (newArr.length === length) {
-      return fn.apply(this, newArr);
-    } else if (newArr.length < length) {
+    if (res.length > 0 || newArr.length < length) {
       return createCurry.call(this, fn, ...newArr);
+    } else {
+      return fn.apply(this, newArr);
     }
   }
 }
