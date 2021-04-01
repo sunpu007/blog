@@ -3,7 +3,7 @@ const clientSecret = process.env.GITHUB_CLIENT_SECRET;
 
 module.exports = {
   title: 'Jerry的博客',
-  description: '知名“百度CV”高级工程师',
+  description: '✌知名“百度CV”高级工程师✌',
 //   description: '专注于前后端技术，从前端到后端再到数据库',
   dest: './dist',
   head: [
