@@ -390,6 +390,18 @@ function parsingParams(queryString) {
 }
 ```
 
+> 封装`QueryString`参数
+
+```js
+function packageParams(obj) {
+  let params = ''
+  Object.keys(obj).forEach(key => {
+    params += key +  '=' + obj[key] + '&'
+  })
+  return params.substring(0, params.length - 1)
+}
+```
+
 > 验证变量类型
 
 ```js
