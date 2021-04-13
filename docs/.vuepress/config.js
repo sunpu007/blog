@@ -31,23 +31,35 @@ module.exports = {
     sidebar: {
       '/webframe/': [
         {
-          title: 'Javascript',
+          title: '前端',
           collapsable: false,
           children: [
             '/webframe/javascript/utils.md',
-            '/webframe/javascript/code-snippet.md'
-          ]
-        },
-        {
-          title: 'Vue',
-          collapsable: false,
-          children: [
+            '/webframe/javascript/code-snippet.md',
             '/webframe/vue/toast.md',
             '/webframe/vue/svg.md',
             '/webframe/vue/vue-cli.md',
             '/webframe/vue/permission.md'
           ]
         },
+        // {
+        //   title: 'Javascript',
+        //   collapsable: false,
+        //   children: [
+        //     '/webframe/javascript/utils.md',
+        //     '/webframe/javascript/code-snippet.md'
+        //   ]
+        // },
+        // {
+        //   title: 'Vue',
+        //   collapsable: false,
+        //   children: [
+        //     '/webframe/vue/toast.md',
+        //     '/webframe/vue/svg.md',
+        //     '/webframe/vue/vue-cli.md',
+        //     '/webframe/vue/permission.md'
+        //   ]
+        // },
         // {
         //   title: 'Typescript',
         //   collapsable: false,
@@ -79,23 +91,34 @@ module.exports = {
       ],
       '/server/': [
         {
-          title: '工具',
+          title: '服务器',
           collapsable: false,
           children: [
             '/server/tool/nginx.md',
             '/server/tool/node.md',
             '/server/tool/mongodb.md',
-            '/server/tool/redis.md'
-          ]
-        },
-        {
-          title: '运维',
-          collapsable: false,
-          children: [
-            // '/server/operation/mining.md'
+            '/server/tool/redis.md',
             '/server/operation/ssh.md'
           ]
         },
+        // {
+        //   title: '工具',
+        //   collapsable: false,
+        //   children: [
+        //     '/server/tool/nginx.md',
+        //     '/server/tool/node.md',
+        //     '/server/tool/mongodb.md',
+        //     '/server/tool/redis.md'
+        //   ]
+        // },
+        // {
+        //   title: '运维',
+        //   collapsable: false,
+        //   children: [
+        //     // '/server/operation/mining.md'
+        //     '/server/operation/ssh.md'
+        //   ]
+        // },
       ],
       '/about/': [
         {
