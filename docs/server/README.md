@@ -1,6 +1,6 @@
 # 目录
 
-## 工具
+<!-- ## 工具 -->
 
 - [Centos安装Nginx](./tool/nginx.md)
 - [centos安装Node环境](./tool/node.md)
