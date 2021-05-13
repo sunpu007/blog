@@ -147,3 +147,6 @@ main(List<String> args) {
 流程控制与大部分语言相似，唯一不同点就是上面提到的不支持非空即真或者非0即真，必须有明确的bool类型。
 
 > 类和对象
+
+
+<Vssue :title="$title" />
