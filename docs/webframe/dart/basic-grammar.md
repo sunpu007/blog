@@ -61,8 +61,8 @@ final name = DateTime.now();
 
 ```dart
 返回值类型 函数的名称(参数列表) {
-    函数体
-    return 返回值
+  函数体
+  return 返回值
 }
 ```
 
@@ -70,7 +70,7 @@ final name = DateTime.now();
 
 ```dart
 int sum(int num1, int num2) {
-    return num1 + num2;
+  return num1 + num2;
 }
 
 // 上面的代码也可以使用箭头语法来表示，但需要注意的是里面只能是一个表达式，不能是一个语句（与ES6还是有区别）
@@ -90,7 +90,7 @@ int sum(int num1, int num2) => num1 + num2;
 
 ```dart
 void test(String name, {int:age, double height}) {
-    print('$name $age $height')
+  print('$name $age $height')
 }
 ```
 
@@ -125,17 +125,17 @@ var temp = name ?? 'Jerry'
 // `..`（级联运算符）
 // 相当于Javascript的链式调用
 class Person {
-    String name;
-    void run() {
-        print('$name is running');
-    }
-    void eat() {
-        print('$name is eatting');
-    }
+  String name;
+  void run() {
+    print('$name is running');
+  }
+  void eat() {
+    print('$name is eatting');
+  }
 }
 
 main(List<String> args) {
-    var p = Person()
+  var p = Person()
         		..name = 'Jerry'
         		..run()
         		..eat();
