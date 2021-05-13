@@ -39,7 +39,8 @@ module.exports = {
             '/webframe/vue/toast.md',
             '/webframe/vue/svg.md',
             '/webframe/vue/vue-cli.md',
-            '/webframe/vue/permission.md'
+            '/webframe/vue/permission.md',
+            '/webframe/dart/basic-grammar.md'
           ]
         },
         // {
