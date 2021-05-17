@@ -76,7 +76,8 @@ module.exports = {
           children: [
             '/backend/node/download-file.md',
             '/backend/node/command-out.md',
-            '/backend/node/job.md'
+            '/backend/node/job.md',
+            '/backend/node/server-info.md'
           ]
         },
       ],
