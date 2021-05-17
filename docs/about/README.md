@@ -5,8 +5,8 @@
 - 联系方式：731238433@qq.com
 - 坐标：西安
 - 技能清单:
-  - 编程语言: Javascript、Java、Typescript
-  - 前端: Vue、Webpack、Nodejs、jQuery、thymeleaf
+  - 编程语言: Javascript、Java、Typescript、Dart
+  - 前端: Vue、Webpack、Nodejs、jQuery、thymeleaf、Flutter
   - 框架: SpringBoot、Element UI
   - 数据库: Mysql、Redis、Mongodb
   - 容器: Nginx、Tomcat、Centos
