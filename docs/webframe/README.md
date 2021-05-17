@@ -8,7 +8,7 @@
 - [让项目支持SVG](./vue/svg.md)
 - [手写脚手架工具](./vue/vue-cli.md)
 - [菜单的动态权限控制](./vue/permission.md)
-- [dart基础语法](./dart/basic-grammar.md)
+- [Dart基础语法](./dart/basic-grammar.md)
 
 <Vssue :title="$title" />
 
