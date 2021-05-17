@@ -6,7 +6,7 @@
 - 坐标：西安
 - 技能清单:
   - 编程语言: Javascript、Java、Typescript、Dart
-  - 前端: Vue、Webpack、Nodejs、jQuery、thymeleaf、Flutter
+  - 前端: Vue、Webpack、Nodejs、Egg、jQuery、Flutter
   - 框架: SpringBoot、Element UI
   - 数据库: Mysql、Redis、Mongodb
   - 容器: Nginx、Tomcat、Centos
