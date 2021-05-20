@@ -4,7 +4,7 @@
 
 下载地址：[http://redis.io/download](http://redis.io/download)，下载最新稳定版
 
-![image-20201124203017327](https://cdn-blog.myjerry.cn/image-20201124203017327.png)
+![image-20201124203017327](http://oss-blog.myjerry.cn/image-20201124203017327.png)
 
 ```sh
 $ wget https://download.redis.io/releases/redis-6.0.9.tar.gz
@@ -58,7 +58,7 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl status redis
 ```
 
-![image-20201124204509672](https://cdn-blog.myjerry.cn/image-20201124204509672.png)
+![image-20201124204509672](http://oss-blog.myjerry.cn/image-20201124204509672.png)
 
 设置开机启动
 
