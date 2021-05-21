@@ -28,6 +28,7 @@ module.exports = {
     ],
     sidebarDepth: 3,
     displayAllHeaders: true,
+    lastUpdated: '上次更新时间',
     sidebar: {
       '/webframe/': [
         {
