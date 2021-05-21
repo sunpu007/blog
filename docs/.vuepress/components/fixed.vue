@@ -3,11 +3,11 @@
     <div class="tencent_code">
       <h4>添加微信</h4>
       <p>获取阿里云更多优惠</p>
-      <img src="http://oss-blog.myjerry.cn/wechat-accout-img.jpg" alt="" />
+      <img src="https://oss-blog.myjerry.cn/wechat-accout-img.jpg" alt="" />
     </div>
     <div class="tencent_code">
       <p>阿里云最新活动</p>
-      <img src="http://oss-blog.myjerry.cn/aliyun-202012021638.png" alt="" />
+      <img src="https://oss-blog.myjerry.cn/aliyun-202012021638.png" alt="" />
     </div>
   </div>
 </template>

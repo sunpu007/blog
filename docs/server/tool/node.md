@@ -10,7 +10,7 @@ $ yum install gcc gcc-c++
 
 下载Node，下载地址：[https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 
-![image-20201122171624672](http://oss-blog.myjerry.cn/20201122171710.png)
+![image-20201122171624672](https://oss-blog.myjerry.cn/20201122171710.png)
 
 ```sh
 $ wget https://nodejs.org/dist/v14.15.1/node-v14.15.1-linux-x64.tar.xz

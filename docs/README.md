@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: http://oss-blog.myjerry.cn/avatar/blog-avatar.jpg
+heroImage: https://oss-blog.myjerry.cn/avatar/blog-avatar.jpg
 actionText: Start reading →
 actionLink: /webframe/
 features:

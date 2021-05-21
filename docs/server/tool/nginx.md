@@ -10,7 +10,7 @@ $ yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
 
 下载Nginx，下载地址：[https://nginx.org/en/download.html](https://nginx.org/en/download.html)
 
-![image-20201121153734585](http://oss-blog.myjerry.cn/image-20201121153734585.png)
+![image-20201121153734585](https://oss-blog.myjerry.cn/image-20201121153734585.png)
 
 选择所要安装的版本，这里选择最新版`nginx-1.18.0`
 
@@ -27,7 +27,7 @@ $ tar zxvf nginx-1.18.0.tar.gz
 
 进入安装包目录
 
-![image-20201121151415405](http://oss-blog.myjerry.cn/image-20201121151415405.png)
+![image-20201121151415405](https://oss-blog.myjerry.cn/image-20201121151415405.png)
 
 常用目录介绍
 
@@ -68,7 +68,7 @@ $ ./sbin/nginx
 
 浏览器访问http://localhost:8080
 
-![image-20201121153652684](http://oss-blog.myjerry.cn/image-20201121153652684.png)
+![image-20201121153652684](https://oss-blog.myjerry.cn/image-20201121153652684.png)
 
 > 使用`systemd`进行服务管理
 
@@ -97,7 +97,7 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl status nginx
 ```
 
-![image-20201121153040158](http://oss-blog.myjerry.cn/image-20201121153040158.png)
+![image-20201121153040158](https://oss-blog.myjerry.cn/image-20201121153040158.png)
 
 设置开机启动
 
