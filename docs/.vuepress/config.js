@@ -24,7 +24,7 @@ module.exports = {
       { text: '数据结构与算法', link: '/datastructure-algorithm/' },
       { text: '服务器', link: '/server/' },
       { text: '关于我', link: '/about/' },
-      { text: 'github', link: 'https://github.com/sunpu007/blog' }
+      { text: 'github', link: 'https://github.com/sunpu007/' }
     ],
     sidebarDepth: 3,
     displayAllHeaders: true,
