@@ -408,4 +408,13 @@ function packageParams(obj) {
 const isType = type => obj => Object.prototype.toString.call(obj) === `[object ${type}]`;
 ```
 
+> 获取cookie
+
+```js
+function getCookie(keyName) {
+  const reg = new RegExp(`(^| )${keyName}=([^;]*)(;|$)`)
+  return document.cookie.match(reg)[2]
+}
+```
+
 <Vssue :title="$title" />
