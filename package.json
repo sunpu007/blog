@@ -16,9 +16,7 @@
     "@vuepress/plugin-medium-zoom": "^1.0.0-rc.1",
     "@vuepress/plugin-nprogress": "^1.7.1",
     "vuepress": "^1.7.1",
+    "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-copyright": "^1.0.2"
-  },
-  "dependencies": {
-    "vuepress-plugin-code-copy": "^1.0.6"
   }
 }
