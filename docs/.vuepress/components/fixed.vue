@@ -29,6 +29,9 @@
   border-radius: 3px 0 0 3px;
   box-shadow: -1px 0 2px 0.5px rgba(0,127,255,.2);
 }
+.fixed_container:hover {
+  box-shadow: 0px 0 10px 5px rgb(0 127 255 / 20%);
+}
 .tencent_code h4 {
   font-size: 15px;
   color: #007fff;
