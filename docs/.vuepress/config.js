@@ -138,6 +138,7 @@ module.exports = {
     ['@vuepress/back-to-top'], // 返回顶部
     ['@vuepress/nprogress'], // 加载进度条
     ['@vuepress/medium-zoom'],
+    ['vuepress-plugin-code-copy', true],
     ['@vssue/vuepress-plugin-vssue', {
       platform: 'github', //v3的platform是github，v4的是github-v4
       locale: 'zh', //语言
