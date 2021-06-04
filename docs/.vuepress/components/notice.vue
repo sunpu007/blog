@@ -69,11 +69,12 @@ export default {
       top: 50%;
       left: 50%;
       transform: translateX(-50%) translateY(-50%);
-      width: 638px;
+      width: 600px;
       height: 244px;
       border-radius: 5px;
       padding: 40px;
-      background-image: url('https://img.alicdn.com/imgextra/i1/O1CN01JOLCyL1MysL7GoLbX_!!6000000001504-2-tps-638-244.png');
+      background: linear-gradient(90deg, #775ffa, #8D9DFF);
+      // background-image: url('https://img.alicdn.com/imgextra/i1/O1CN01JOLCyL1MysL7GoLbX_!!6000000001504-2-tps-638-244.png');
       color: #fff;
       img {
         position: absolute;
