@@ -10,7 +10,20 @@ module.exports = {
     [ 'meta', { name: 'keywords', content: 'sunpu,Jerry,sp,jerry,sun,孙谱-前端开发工程师,孙谱,孙谱-前端,孙谱-全栈,孙谱-陕西西安,孙谱-西安,孙谱-全栈工程师' } ],
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     // ['link', { rel: 'manifest', href: '/manifest.json' }],
-    ['script', { src: '/common.js' }]
+    ['script', { src: '/common.js' }],
+    [
+      "script",
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?97f3b97ce0bea6ad75db099c2a6e1504";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `
+    ]
   ],
   // 显示行号
   // markdown: {
