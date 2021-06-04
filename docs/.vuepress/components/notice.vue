@@ -18,7 +18,7 @@ export default {
   name: 'notice',
   data() {
     return {
-      isShowDialog: sessionStorage.getItem('isShowDialog') === null ? true : JSON.parse(sessionStorage.getItem('isShowDialog')),
+      isShowDialog: true,
       timeStr: '',
       timer: null
     }
