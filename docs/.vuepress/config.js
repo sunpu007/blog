@@ -161,7 +161,7 @@ module.exports = {
     // },
     {
       name: 'page-plugin',
-      globalUIComponents: ['fixed'],
+      globalUIComponents: ['fixed', 'notice'],
     },
   ]
 }

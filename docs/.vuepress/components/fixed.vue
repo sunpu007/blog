@@ -22,7 +22,6 @@
   position: fixed;
   right: 0;
   top: 150px;
-  width: 140px;
   padding: 20px 10px;
   text-align: center;
   background-color: #fff;
