@@ -1,5 +1,6 @@
 const clientId = process.env.GITHUB_CLIENT_ID;
 const clientSecret = process.env.GITHUB_CLIENT_SECRET;
+const baiduKey = process.env.BAI_DU_KEY;
 
 module.exports = {
   title: 'Jerry的博客',
@@ -18,7 +19,7 @@ module.exports = {
       var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?97f3b97ce0bea6ad75db099c2a6e1504";
+        hm.src = "https://hm.baidu.com/hm.js?${baiduKey}";
         var s = document.getElementsByTagName("script")[0]; 
         s.parentNode.insertBefore(hm, s);
       })();
