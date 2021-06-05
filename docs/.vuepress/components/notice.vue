@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="footer-icon" v-if="!isShowDialog" @click="isShowDialog=true">618</div>
-    <a href="https://www.aliyun.com/activity/618/2021?userCode=6mto7kqp" target="_black"><div class="footer-icon footer-min">618</div></a>
+    <div class="footer-icon footer-min" @click="to618s">618</div>
   </div>
 </template>
 
@@ -45,6 +45,7 @@ export default {
       sessionStorage.setItem('isShowDialog', false)
     },
     to618() {
+      _hmt.push(['_trackEvent', '2021_618', 'click']);
       window.open('https://www.aliyun.com/activity/618/2021?userCode=6mto7kqp', '_black')
     }
   },
