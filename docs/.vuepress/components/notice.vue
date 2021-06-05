@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="footer-icon" v-if="!isShowDialog" @click="isShowDialog=true">618</div>
-    <div class="footer-icon footer-min" @click="to618s">618</div>
+    <div class="footer-icon footer-min" @click="to618">618</div>
   </div>
 </template>
 
