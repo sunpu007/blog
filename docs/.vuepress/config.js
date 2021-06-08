@@ -9,6 +9,7 @@ module.exports = {
   dest: './dist',
   head: [
     [ 'meta', { name: 'keywords', content: 'sunpu,Jerry,sp,jerry,sun,孙谱-前端开发工程师,孙谱,孙谱-前端,孙谱-全栈,孙谱-陕西西安,孙谱-西安,孙谱-全栈工程师' } ],
+    [ 'meta', { name: 'baidu-site-verification', content: 'code-3R75nJx62i' }],
     ['link', { rel: 'icon', href: `/favicon.ico` }],
     // ['link', { rel: 'manifest', href: '/manifest.json' }],
     // ['script', { src: '/common.js' }],
