@@ -1,6 +1,6 @@
 # Dart基础语法
 
-> 认识dart
+## 认识dart
 
 Dart 是由谷歌开发的通用的编程语言，它常用于构建web、服务器、桌面和移动应用程序。
 
@@ -8,7 +8,7 @@ Dart是一种简洁、清晰、基于类的面向对象的语言，它是基于J
 
 Dart是一种面向对象的、类定义的、垃圾回收语言。它支持接口、mixin、类对象，具有化泛型、静态类型等。
 
-> 数据类型
+## 数据类型
 
 dart的数据类型有数字（int、double）、字符串（String）、布尔（bool）与集合类型（List、Set、Map）。
 
@@ -24,7 +24,7 @@ print('my name is ${name}, age is $age, current time ${DateTime.now()}')
 
 
 
-> 定义变量
+## 定义变量
 
 变量的声明格式如下：
 
@@ -63,7 +63,7 @@ const age = 18;
 final name = DateTime.now();
 ```
 
-> 函数的定义
+## 函数的定义
 
 函数的定义方式如：
 
@@ -82,7 +82,7 @@ int sum(int num1, int num2) {
 }
 
 // 上面的代码也可以使用箭头语法来表示，但需要注意的是里面只能是一个表达式，不能是一个语句（与ES6还是有区别）
-int sum(int num1, int num2) => num1 + num2;
+int sum(int num1, int num2) =## num1 + num2;
 ```
 
 函数的参数可分为两类：必选参数与可选参数。
@@ -112,7 +112,7 @@ void test(String name, {int:age = 18, double height = 1.88}) {
 
 在dart中可以嫁给你函数赋值给一个变量，也可以将函数作为参数或者返回值来使用（*与Javascript类似，同时也有匿名函数、词法作用域、闭包等概念*）。
 
-> 运算符
+## 运算符
 
 dart除了加减乘除、取模等运算符之外，还有`??=`（赋值运算符）、`??`（条件运算符）、`..`（级联运算符）等。
 
@@ -142,7 +142,7 @@ class Person {
   }
 }
 
-main(List<String> args) {
+main(List<String## args) {
   var p = Person()
         		..name = 'Jerry'
         		..run()
@@ -150,11 +150,11 @@ main(List<String> args) {
 }
 ```
 
-> 流程控制
+## 流程控制
 
 流程控制与大部分语言相似，唯一不同点就是上面提到的不支持非空即真或者非0即真，必须有明确的bool类型。
 
-> 类和对象
+## 类和对象
 
 ::: tip
 
@@ -178,7 +178,7 @@ class 类名 {
 类的定义与创建对应的对象
 
 ```dart
-main(List<String args>) {
+main(List<String args##) {
   // 创建类的对象
   var p = new Person(); // 直接使用Person()也可以创建
   // 对象的属性赋值
@@ -213,7 +213,7 @@ class Student {
 }
 ```
 
-***构造方法***
+### 构造方法
 
 在定义时并没有手动拆功能键类的构造方法时，系统会自动创建一个默认的无参构造方法（*上面的Person中我们就没有定义构造方法，在创建类的对象时调用的时默认无参构造方法*）。
 
@@ -248,7 +248,7 @@ class Person {
     this.age = 0;
   }
 
-  Person.withArgments(Map<String, Object> map) {
+  Person.withArgments(Map<String, Object## map) {
     this.name = map['name'];
     this.age = map['age'];
   }
@@ -289,7 +289,7 @@ class Person {
 // 我们有时会存在传入相同的值时，返回的对象时同一个，这时我们就需要使用常量构造方法
 // 需要注意的是：拥有常量构造方法的类中，所有的成员变量必须用final修饰；为了可以通过常量构造方法，创建出相同的对象，不再使用 new关键字，而是使用const关键字
 // 如果是将结果赋值给const修饰的标识符时，const可以省略.
-main(List<String> args) {
+main(List<String## args) {
   var p1 = const Person('why');
   var p2 = const Person('why');
   print(identical(p1, p2)); // true
@@ -303,7 +303,7 @@ class Person {
 
 // 工厂构造方法
 // 使用`factory`修饰的构造函数被称之为工厂构造方法，工厂构造方法允许有返回值
-main(List<String> args) {
+main(List<String## args) {
   var p1 = Person('why');
   var p2 = Person('why');
   print(identical(p1, p2)); // true
@@ -312,7 +312,7 @@ main(List<String> args) {
 class Person {
   String name;
 
-  static final Map<String, Person> _cache = <String, Person>{};
+  static final Map<String, Person## _cache = <String, Person##{};
 
   factory Person(String name) {
     if (_cache.containsKey(name)) {
@@ -328,12 +328,12 @@ class Person {
 }
 ```
 
-***setting和getting***
+### setting和getting
 
 通常我们虚妄对类的属性进行监控就可以使用`setting`和`getting`。
 
 ```dart
-main(List<String> args) {
+main(List<String## args) {
   final d = Dog("黄色");
   d.setColor = "黑色";
   print(d.getColor);
@@ -342,18 +342,18 @@ main(List<String> args) {
 class Dog {
   String color;
 
-  String get getColor => color;
-  set setColor(String color) => this.name = name;
+  String get getColor =## color;
+  set setColor(String color) =## this.name = name;
   Dog(this.color);
 }
 ```
 
-***类的继承***
+### 类的继承
 
 继承不仅仅可以减少代码量，也是多态的使用前提。
 
 ```dart
-main(List<String> args) {
+main(List<String## args) {
   var p = new Person();
   p.age = 18;
   p.run();
@@ -410,11 +410,11 @@ class Person extends Animal {
 }
 ```
 
-***抽象类***
+### 抽象类
 
 抽象类与其它语言一直，就不做介绍了
 
-***隐式接口***
+### 隐式接口
 
 dart中并没有一个关键字来定义接口，默认情况下，所有类都属于接口（dart不支持多继承）
 
@@ -441,7 +441,7 @@ class SuperMan implements Runner, Flyer {
 }
 ```
 
-***Mixin混入***
+### Mixin混入
 
 在通过implements实现某个类时，类中所有的方法都必须`被重新实现`(无论这个类原来是否已经实现过该方法)。但是某些情况下，一个类可能希望直接复用之前类的原有实现方案，但是dart只支持单继承，所以提供了另一种方案`Mixin`(使用功能与Vue相似)
 
@@ -462,10 +462,32 @@ class SuperMain with Runner, Flyer {
 }
 ```
 
-***枚举类型***
+### 枚举类型
 
 枚举的使用与其它语言相似，但需要注意的是：不能子类化、混合或实现枚举；不能显式实例化一个枚举。
 
+## 扩展（dart >= 2.6.0）
+
+在通常开发中，我们可能需要对某个类进行扩展一些方法，dart给我们提供了`extension`关键字（类似于Javascript中的prototype）
+
+```dart
+extension intFit on int {
+  // 扩展一个方法
+  void demoFn() {
+    // ...body
+  }
+  int demoFn() {
+    // ...body
+    return this
+  }
+  // 扩展一个getter
+  int get demoGet {
+    // ...body
+    return this
+  }
+}
+```
 
 
-<Vssue :title="$title" />
+
+<Vssue :title="$title" /##
