@@ -130,7 +130,7 @@ export function asyncLoad(jsList, cssList) {
 
 > 使用
 
-```js\
+```js
 loadJs('js_url').then(res => ...)
 loadCss('css_url').then(res => ...)
 asyncLoad(['js_url', ...], ['css_url', ...]).then(res => ...)
