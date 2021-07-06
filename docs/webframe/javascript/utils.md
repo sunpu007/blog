@@ -48,7 +48,7 @@ function checkMobile(mobile) {
 
 ```js
 function formatDeta(time, formatStr) {
-  const date = new Date(time)
+  const date = time ? new Date(time) : new Date()
   const o = {
     'M+': date.getMonth() + 1,
     'd+': date.getDate(),
