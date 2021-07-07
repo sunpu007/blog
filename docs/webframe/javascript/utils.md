@@ -396,7 +396,7 @@ function parsingParams(queryString) {
 function packageParams(obj) {
   let params = ''
   Object.keys(obj).forEach(key => {
-    params += key +  '=' + obj[key] + '&'
+    if (obj[key]) params += key + '=' + obj[key] + '&'
   })
   return params.substring(0, params.length - 1)
 }
