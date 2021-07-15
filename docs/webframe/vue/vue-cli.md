@@ -51,7 +51,7 @@ mkdir vue-cli
 npm init -y
 ```
 
-- 编写入口文件，在`bin`文件夹下创建`www.js`文件，写入一下代码
+- 编写入口文件，在`bin`文件夹下创建`www.js`文件，写入以下代码
 
 ```js
 #! /usr/bin/env node

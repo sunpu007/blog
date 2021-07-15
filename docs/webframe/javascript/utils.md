@@ -48,7 +48,7 @@ function checkMobile(mobile) {
 
 ```js
 function formatDeta(time, formatStr) {
-  const date = new Date(time)
+  const date = time ? new Date(time) : new Date()
   const o = {
     'M+': date.getMonth() + 1,
     'd+': date.getDate(),
@@ -385,7 +385,7 @@ function parsingParams(queryString) {
 function packageParams(obj) {
   let params = ''
   Object.keys(obj).forEach(key => {
-    params += key +  '=' + obj[key] + '&'
+    if (obj[key]) params += key + '=' + obj[key] + '&'
   })
   return params.substring(0, params.length - 1)
 }

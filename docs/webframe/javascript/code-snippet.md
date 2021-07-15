@@ -35,6 +35,20 @@ Function.prototype.myBind = function(context) {
 }
 ```
 
+> 手写apply
+
+```js
+Function.prototype.myApply = function(context) {
+  if (typeof context === "undefined" || context === null) {
+    context = window;
+  }
+  const self = this;
+  return function() {
+    return self.bind(context, ...arguments);
+  };
+}
+```
+
 > 实现函数柯里化
 
 ```js

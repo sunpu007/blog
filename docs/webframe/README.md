@@ -9,6 +9,7 @@
 - [手写脚手架工具](./vue/vue-cli.md)
 - [菜单的动态权限控制](./vue/permission.md)
 - [Dart基础语法](./dart/basic-grammar.md)
+- [动态加载js与css文件](./javascript/async-load.md)
 
 <Vssue :title="$title" />
 

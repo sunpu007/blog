@@ -178,7 +178,7 @@ class 类名 {
 类的定义与创建对应的对象
 
 ```dart
-main(List<String args>) {
+main(List<String args##) {
   // 创建类的对象
   var p = new Person(); // 直接使用Person()也可以创建
   // 对象的属性赋值
@@ -312,7 +312,7 @@ main(List<String> args) {
 class Person {
   String name;
 
-  static final Map<String, Person> _cache = <String, Person>{};
+  static final Map<String, Person> _cache = <String, Person##{};
 
   factory Person(String name) {
     if (_cache.containsKey(name)) {
@@ -466,6 +466,28 @@ class SuperMain with Runner, Flyer {
 
 枚举的使用与其它语言相似，但需要注意的是：不能子类化、混合或实现枚举；不能显式实例化一个枚举。
 
+> 扩展（dart >= 2.6.0）
+
+在通常开发中，我们可能需要对某个类进行扩展一些方法，dart给我们提供了`extension`关键字（类似于Javascript中的prototype）
+
+```dart
+extension intFit on int {
+  // 扩展一个方法
+  void demoFn() {
+    // ...body
+  }
+  int demoFn() {
+    // ...body
+    return this
+  }
+  // 扩展一个getter
+  int get demoGet {
+    // ...body
+    return this
+  }
+}
+```
 
 
-<Vssue :title="$title" />
+
+<Vssue :title="$title" /##
