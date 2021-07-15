@@ -132,17 +132,6 @@ function getYesterDate(time) {
 }
 ```
 
-> 自定义异常
-
-```js
-function VideoError(code, msg) {
-  this.code = code;
-  this.messages = msg;
-}
-VideoError.prototype = Object.create(Error.prototype);
-VideoError.prototype.constructor = VideoError;
-```
-
 > 判断是否为对象
 
 ```js
