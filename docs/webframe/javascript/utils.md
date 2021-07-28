@@ -406,4 +406,26 @@ function getCookie(keyName) {
 }
 ```
 
+> 时间过滤器(n(秒|分钟|小时|天)前)
+
+```js
+function timeFilter(time) {
+  if (!time) return ''
+  const s = parseInt(new Date().getTime() / 1000 - time)
+  if (s < 60) return s + ' secs ago'
+  if (s < 3600) return parseInt(s / 60) + ' mins ago'
+
+  if (s < 86400) {
+    const hours = parseInt(s / 3600)
+    const min = parseInt((s - hours * 3600) / 60)
+    if (min >= 1) return `${hours} hr ${min} min ago`
+    return hours + ' hrs ago'
+  }
+  const day = parseInt(s / 86400)
+  const hours = parseInt((s - day * 86400) / 3600)
+  if (hours >= 1) return `${day} days ${hours} hrs ago`
+  return day + ' days ago'
+}
+```
+
 <Vssue :title="$title" />
