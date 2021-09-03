@@ -165,19 +165,10 @@ module.exports = TaskService;
 ```js
 // app/extend/helper.js
 'use strict';
+
 const schedule = require('node-schedule');
-/**
- * 用于存放定时任务的堆栈
- */
-const scheduleStacks = {};
 
 module.exports = {
-  /**
-   * 获取当前在执行所有任务
-   */
-  async getScheduleStacks() {
-    return scheduleStacks;
-  },
   /**
    * 创建定时任务
    * @param {*} id 任务ID
@@ -189,8 +180,22 @@ module.exports = {
    */
   async generateSchedule(id, cron, jobName, jobHandler) {
     this.ctx.logger.info('[创建定时任务]，任务ID: %s，cron: %s，任务名: %s，任务方法: %s', id, cron, jobName, jobHandler);
-    scheduleStacks[jobName] = schedule.scheduleJob(cron, () => {
-      this.service.scheduleService[jobHandler](id);
+    this.app.scheduleStacks[jobName] = schedule.scheduleJob(cron, async () => {
+      // 读取锁,保证一个任务同时只能有一个进程执行
+      const locked = await this.app.redlock.lock('sendAllUserBroadcast:' + id, 'sendAllUserBroadcast', 180);
+      if (!locked) return false;
+
+      try {
+        // 获取任务信息
+        const schedule = await this.app.mysql.get('schedule_job', { job_id: id });
+        // 调用任务方法
+        await this.service.scheduleService[jobHandler](schedule.params);
+      } catch (error) {
+        await this.logger.info('执行任务`%s`失败，时间：%s, 错误信息：%j', jobName, new Date().toLocaleString(), error)
+      } finally {
+        // 释放锁
+        await this.app.redlock.unlock('sendAllUserBroadcast:' + id);
+      }
     });
   },
   /**
@@ -199,7 +204,7 @@ module.exports = {
    */
   async cancelSchedule(jobName) {
     this.ctx.logger.info('[取消定时任务]，任务名：%s', jobName);
-    scheduleStacks[jobName] && scheduleStacks[jobName].cancel();
+    this.app.scheduleStacks[jobName] && this.app.scheduleStacks[jobName].cancel();
   },
 };
 ```
@@ -213,24 +218,33 @@ module.exports = {
 ```js
 // app/service/scheduleService.js
 'use strict';
-const { Service } = require("egg");
+
+const { Service } = require('egg');
+
 class ScheduleService extends Service {
   /**
    * 测试处理程序
+   * @param {*} params 任务参数
    */
-  async testHandler(job_id) {
-    // 读取锁,保证一个任务同时只能有一个进程执行
-    const locked = await this.app.redlock.lock('sendAllUserBroadcast:' + job_id, 'sendAllUserBroadcast', 180);
-    if (!locked) return false;
-
-    const schedule = await this.app.mysql.get('schedule_job', { job_id });
+  async testHandler(params) {
     // 此处替换成具体业务代码
-    await this.logger.info('我是测试任务，任务信息: %j', schedule);
-
-    // 释放锁
-    await this.app.redlock.unlock('sendAllUserBroadcast:' + job_id);
+    await this.logger.info('我是测试任务，任务参数: %s', params);
+  }
+  /**
+   * 测试调用接口任务
+   * @param {*} params 任务参数
+   */
+  async testCurlHandler(params) {
+    // 获取参数
+    const paramsObj = JSON.parse(params)
+    const result = await this.ctx.curl(paramsObj.url, {
+      method: paramsObj.method,
+      data: paramsObj.data
+    });
+    // await this.logger.info('测试调用接口任务，状态码：%d，返回值：%j', result.status);
   }
 }
+
 module.exports = ScheduleService;
 ```
 
@@ -319,7 +333,7 @@ async runSchedule({ job_id }) {
   const schedule = await this.app.mysql.get('schedule_job', { job_id });
   if (schedule === null) throw new VideoError(RESULT_FAIL, '任务不存在');
   // 执行任务
-  this.service.scheduleService[schedule.jobHandler]();
+  this.service.scheduleService[schedule.jobHandler](schedule.params);
 }
 ```
 
@@ -434,8 +448,8 @@ export function runSchedule(data) {
         <el-form-item label="参数" prop="params">
           <el-input v-model="fromData.params" type="textarea" placeholder="请输入参数" />
         </el-form-item>
-        <el-form-item label="任务描述" prop="remark">
-          <el-input v-model="fromData.remark" type="textarea" placeholder="请输入任务描述" />
+        <el-form-item label="任务描述" prop="description">
+          <el-input v-model="fromData.description" type="textarea" placeholder="请输入任务描述" />
         </el-form-item>
       </el-form>
       <div style="text-align:right;">
@@ -530,7 +544,7 @@ export default {
       const { code } = await updateStatusSchedule({ job_id, status })
       if (code === 0) {
         this.$message({
-          message: '编辑成功',
+          message: status === 0 ? '任务启动成功' : '任务停止成功',
           type: 'success'
         })
         this.getList()
@@ -552,18 +566,10 @@ export default {
 
 > 项目地址
 
-
-
 前端源码：[admin-web](https://github.com/sunpu007/admin-web)
-
-
 
 服务端源码：[admin-server](https://github.com/sunpu007/admin-server)
 
-
-
 预览地址：[admin-demo](http://admin-demo.myjerry.cn)
-
-
 
 <Vssue :title="$title" />
