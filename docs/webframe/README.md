@@ -10,6 +10,7 @@
 - [菜单的动态权限控制](./vue/permission.md)
 - [Dart基础语法](./dart/basic-grammar.md)
 - [动态加载js与css文件](./javascript/async-load.md)
+- [阿里oss+cdn部署前后端分离项目](./vue/oss-deploy.md)
 
 <Vssue :title="$title" />
 

@@ -57,7 +57,8 @@ module.exports = {
             '/webframe/vue/vue-cli.md',
             '/webframe/vue/permission.md',
             '/webframe/dart/basic-grammar.md',
-            '/webframe/javascript/async-load.md'
+            '/webframe/javascript/async-load.md',
+            '/webframe/vue/oss-deploy.md'
           ]
         },
         // {
