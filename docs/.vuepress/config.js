@@ -59,6 +59,7 @@ module.exports = {
             '/webframe/dart/basic-grammar.md',
             '/webframe/javascript/async-load.md',
             '/webframe/vue/oss-deploy.md'
+            // '/webframe/javascript/closure.md'
           ]
         },
         // {
