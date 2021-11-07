@@ -1,6 +1,6 @@
 # 菜单的动态权限控制
 
-> 前言
+### 前言
 
 vue实现动态路由的方式大体分为两种：
 
@@ -8,7 +8,7 @@ vue实现动态路由的方式大体分为两种：
 
 2、后端传回当前用户对应权限的路由表，前端通过调用`addRoutes`添加到路由表
 
-> 服务端实现
+### 服务端实现
 
 项目创建忽略，大家可以自行百度，使用的是阿里的Egg.js框架
 
@@ -343,7 +343,7 @@ async editRoleMenu({ role_id, menuIds }) {
 
 2、编写相关接口
 
-> 前端实现
+### 前端实现
 
 *注：前端项目是基于花裤衩[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)改造*
 
@@ -956,7 +956,7 @@ export default {
 </style>
 ```
 
-> 项目地址
+### 项目地址
 
 前端源码：[admin-web](https://github.com/sunpu007/admin-web)
 

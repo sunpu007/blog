@@ -1,12 +1,12 @@
 # centos安装Node环境
 
-> 安装编译工具及库文件
+### 安装编译工具及库文件
 
 ```sh
 $ yum install gcc gcc-c++
 ```
 
-> 安装Node
+### 安装Node
 
 下载Node，下载地址：[https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 

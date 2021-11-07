@@ -1,6 +1,6 @@
 # 代码片段
 
-> 手写new
+### 手写new
 
 ```js
 function myNew(fn, ...args) {
@@ -21,35 +21,56 @@ function myNew(fn, ...args) {
 }
 ```
 
-> 手写Bind
+### 手写Bind
 
 ```js
-Function.prototype.myBind = function(context) {
-  if (typeof context === "undefined" || context === null) {
-    context = window;
+Function.prototype.myBind = function(context, ...argArray) {
+  var fn = this
+  context = (context !== null && context !== undefined) ? Object(context): window
+
+  return function(...args) {
+    context.fn = fn
+    var finalArgs = argArray.concat(args)
+    var result = context.fn(...finalArgs)
+    delete context.fn
+
+    return result
   }
-  const self = this;
-  return function() {
-    return self.apply(context, arguments);
-  };
 }
 ```
 
-> 手写apply
+### 手写apply
 
 ```js
-Function.prototype.myApply = function(context) {
-  if (typeof context === "undefined" || context === null) {
-    context = window;
-  }
-  const self = this;
-  return function() {
-    return self.bind(context, ...arguments);
-  };
+Function.prototype.myApply = function(context, ...args) {
+  var fn = this
+  context = (context !== null && context !== undefined) ? Object(context): window
+
+  context.fn = fn
+  argArray = argArray || []
+  var result = context.fn(...argArray)
+  delete context.fn
+
+  return result
 }
 ```
 
-> 实现函数柯里化
+### 手写call
+
+```js
+Function.prototype.myCall = function(context, ...args) {
+  var fn = this
+  context = (context !== null && context !== undefined) ? Object(context): window
+
+  context.fn = fn
+  var result = context.fn(...args)
+  delete context.fn
+
+  return result
+}
+```
+
+### 实现函数柯里化
 
 ```js
 const createCurry = (fn, ...args) => {

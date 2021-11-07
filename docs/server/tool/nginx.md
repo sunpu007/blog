@@ -1,12 +1,12 @@
 # Centos安装Nginx
 
-> 安装编译工具及库文件
+### 安装编译工具及库文件
 
 ```sh
 $ yum -y install make zlib zlib-devel gcc-c++ libtool  openssl openssl-devel
 ```
 
-> 安装Nginx
+### 安装Nginx
 
 下载Nginx，下载地址：[https://nginx.org/en/download.html](https://nginx.org/en/download.html)
 
@@ -70,7 +70,7 @@ $ ./sbin/nginx
 
 ![image-20201121153652684](https://oss-blog.myjerry.cn/files/image-20201121153652684.png)
 
-> 使用`systemd`进行服务管理
+### 使用`systemd`进行服务管理
 
 在`/etc/systemd/system`目录下新建名为`nginx.service`的文件，内容如下：
 

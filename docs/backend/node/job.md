@@ -1,19 +1,19 @@
 # 使用Node.js实现一个定时任务调度中心
 
-> 前言
+### 前言
 
 在日常开发中共，除了给前端开发接口，还要写一些定时处理任务，比如每天定时非所有用户推送消息。一个成熟的定时任务调度中心，是可以通过管理系统来管理所有任务的信息，可以动态更改任务执行时间和立即执行等。
 
 公司最近业务需求需要一个定时任务调度中心的系统，但搜索全网没有找到一个Node开发的定时任务调度中心系统，所以自己实现一个定时任务调度中心系统。
 
-> 需要实现的功能
+### 需要实现的功能
 
 - 任务的增删改查
 - 任务的立即执行
 - 任务的启动/关闭
 - 服务重启自动加载定时任务
 
-> 数据库设计
+### 数据库设计
 
 ```sql
 CREATE TABLE `schedule_job` (
@@ -32,7 +32,7 @@ CREATE TABLE `schedule_job` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='定时任务表';
 ```
 
-> 任务的增删改查
+### 任务的增删改查
 
 ```js
 // app/routers/task.js
@@ -158,7 +158,7 @@ class TaskService extends Service {
 module.exports = TaskService;
 ```
 
-> 实现定时任务的启动、取消与所有任务
+### 实现定时任务的启动、取消与所有任务
 
 [`node-schedule`](https://github.com/node-schedule/node-schedule)是用于Node.js的灵活的cron类和非cron类作业调度程序。它允许使用可选的重复规则来安排（任意函数）在特定日期执行。它在任何给定时间仅使用一个计时器（而不是每秒/分钟重新评估即将到来的作业），提供了启动与停止等方法来管理任务。
 
@@ -209,7 +209,7 @@ module.exports = {
 };
 ```
 
-> 任务的具体处理程序
+### 任务的具体处理程序
 
 `scheduleService`存放所有任务处理程序，目前只实现少量任务的管理，如果任务叫庞大的时候可根据不同的任务类型调用不同service的方法.
 
@@ -248,7 +248,7 @@ class ScheduleService extends Service {
 module.exports = ScheduleService;
 ```
 
-> 服务重启自动加载定时任务
+### 服务重启自动加载定时任务
 
 ```js
 // app.js
@@ -281,7 +281,7 @@ class AppBootHook {
 module.exports = AppBootHook;
 ```
 
-> 完善任务的管理
+### 完善任务的管理
 
 ```js
 // app/routers/task.js
@@ -337,7 +337,7 @@ async runSchedule({ job_id }) {
 }
 ```
 
-> 管理系统页面实现
+### 管理系统页面实现
 
 UI的实现相对简单，就不做解释了
 
@@ -564,7 +564,7 @@ export default {
 </script>
 ```
 
-> 项目地址
+### 项目地址
 
 前端源码：[admin-web](https://github.com/sunpu007/admin-web)
 

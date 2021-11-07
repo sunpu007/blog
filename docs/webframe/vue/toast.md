@@ -62,7 +62,7 @@ v-toast.scss
 }
 ```
 
-> 使用
+### 使用
 
 ```javascript
 Vue.VToast('massage', 1500)

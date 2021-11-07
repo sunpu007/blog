@@ -1,6 +1,6 @@
 # Centos安装Redis
 
-> 下载源码
+### 下载源码
 
 下载地址：[http://redis.io/download](http://redis.io/download)，下载最新稳定版
 
@@ -12,14 +12,14 @@ $ tar xzf redis-6.0.9.tar.gz
 $ cd redis-6.0.9
 ```
 
-> 编译安装
+### 编译安装
 
 ```sh
 $ make
 $ make install
 ```
 
-> 修改配置文件`redis.conf`
+### 修改配置文件`redis.conf`
 
 修改远程访问、后台启动和密码
 
@@ -27,13 +27,13 @@ $ make install
 - 修改`daemonize no`为`yes`
 - 修改`requirepass <你的密码>`
 
-> 启动
+### 启动
 
 ```
 $ ./src/redis-server ./redis.conf
 ```
 
-> 使用systemd管理服务
+### 使用systemd管理服务
 
 在`/etc/systemd/system`目录下新建`redis.service`文件，写入以下内容
 

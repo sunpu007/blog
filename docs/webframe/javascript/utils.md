@@ -1,6 +1,6 @@
 # 常见Js工具方法
 
-> 获取url指定参数
+### 获取url指定参数
 
 ```js
 function QueryString(val) {
@@ -10,7 +10,7 @@ function QueryString(val) {
 }
 ```
 
-> 获取url所有参数
+### 获取url所有参数
 
 ```js
 function getQueryObject(url) {
@@ -29,7 +29,7 @@ function getQueryObject(url) {
 }
 ```
 
-> 验证手机号
+### 验证手机号
 
 ```js
 function checkMobile(mobile) {
@@ -44,7 +44,7 @@ function checkMobile(mobile) {
 }
 ```
 
-> 时间格式化
+### 时间格式化
 
 ```js
 function formatDeta(time, formatStr) {
@@ -66,7 +66,7 @@ function formatDeta(time, formatStr) {
 }
 ```
 
-> 对象克隆
+### 对象克隆
 
 ```js
 function deepClone(source) {
@@ -85,7 +85,7 @@ function deepClone(source) {
 }
 ```
 
-> 根据生日获取年龄
+### 根据生日获取年龄
 
 ```js
 function getAge(birthday) {
@@ -95,7 +95,7 @@ function getAge(birthday) {
 }
 ```
 
-> 查询数组中指定元素下标
+### 查询数组中指定元素下标
 
 ```js
 function findArray(array, feature, all = true) {
@@ -122,7 +122,7 @@ function findArray(array, feature, all = true) {
 }
 ```
 
-> 获取昨天
+### 获取昨天
 
 ```js
 function getYesterDate(time) {
@@ -132,7 +132,7 @@ function getYesterDate(time) {
 }
 ```
 
-> 判断是否为对象
+### 判断是否为对象
 
 ```js
 function isPlainObject(obj) {
@@ -140,7 +140,7 @@ function isPlainObject(obj) {
 }
 ```
 
-> 判断是否为数组
+### 判断是否为数组
 
 ```js
 function isPlainArray(obj) {
@@ -148,7 +148,7 @@ function isPlainArray(obj) {
 }
 ```
 
-> 重命名对象key值(下划线转驼峰)
+### 重命名对象key值(下划线转驼峰)
 
 ```js
 function formatResult(obj) {
@@ -178,7 +178,7 @@ function formatResult(obj) {
 }
 ```
 
-> 模版字符串替换
+### 模版字符串替换
 
 ```js
 function formatStr(str, ...args) {
@@ -190,7 +190,7 @@ function formatStr(str, ...args) {
 }
 ```
 
-> 获取周数(周一为第一天)
+### 获取周数(周一为第一天)
 
 ```js
 function getNowWeek(date) {
@@ -208,7 +208,7 @@ function getNowWeek(date) {
 }
 ```
 
-> 获取字段类型
+### 获取字段类型
 
 ```js
 function getFieldType(field) {
@@ -228,7 +228,7 @@ function getFieldType(field) {
 }
 ```
 
-> 判断当前是时分是否在配置的时间范围内
+### 判断当前是时分是否在配置的时间范围内
 
 ```js
 function judgeNowComeWithIn(openTime, closetTime) {
@@ -242,7 +242,7 @@ function judgeNowComeWithIn(openTime, closetTime) {
 }
 ```
 
-> 防抖
+### 防抖
 
 ```js
 function debounce(func, wait, immediate) {
@@ -281,7 +281,7 @@ function debounce(func, wait, immediate) {
 }
 ```
 
-> 移动端计算根元素字体大小
+### 移动端计算根元素字体大小
 
 ```js
 (function (doc, win) {
@@ -298,7 +298,7 @@ function debounce(func, wait, immediate) {
 })(document, window);
 ```
 
-> 自定义异常
+### 自定义异常
 
 ```js
 function BlogError(code, msg) {
@@ -309,7 +309,7 @@ BlogError.prototype = Object.create(Error.prototype);
 BlogError.prototype.constructor = BlogError;
 ```
 
-> 验证手机号码
+### 验证手机号码
 
 ```js
 function checkMobile(mobile) {
@@ -322,7 +322,7 @@ function checkMobile(mobile) {
 }
 ```
 
-> 获取系统类型
+### 获取系统类型
 
 ```js
 function fetchOS() {
@@ -343,7 +343,7 @@ function fetchOS() {
 }
 ```
 
-> 判断对象数组中是否存在指定键值对
+### 判断对象数组中是否存在指定键值对
 
 ```js
 function arrayIsExistKeyValue(arr, key, value) {
@@ -354,7 +354,7 @@ function arrayIsExistKeyValue(arr, key, value) {
 }
 ```
 
-> 获取对象数组中指定键值对下标
+### 获取对象数组中指定键值对下标
 
 ```js
 function getArrayKeyValueIndex(arr, key, value) {
@@ -365,7 +365,7 @@ function getArrayKeyValueIndex(arr, key, value) {
 }
 ```
 
-> 解析`QueryString`参数
+### 解析`QueryString`参数
 
 ```js
 function parsingParams(queryString) {
@@ -379,7 +379,7 @@ function parsingParams(queryString) {
 }
 ```
 
-> 封装`QueryString`参数
+### 封装`QueryString`参数
 
 ```js
 function packageParams(obj) {
@@ -391,13 +391,13 @@ function packageParams(obj) {
 }
 ```
 
-> 验证变量类型
+### 验证变量类型
 
 ```js
 const isType = type => obj => Object.prototype.toString.call(obj) === `[object ${type}]`;
 ```
 
-> 获取cookie
+### 获取cookie
 
 ```js
 function getCookie(keyName) {
@@ -406,7 +406,7 @@ function getCookie(keyName) {
 }
 ```
 
-> 时间过滤器(n(秒|分钟|小时|天)前)
+### 时间过滤器(n(秒|分钟|小时|天)前)
 
 ```js
 function timeFilter(time) {

@@ -1,12 +1,12 @@
 # Centos安装MongoDB
 
-> 安装平台依赖包
+### 安装平台依赖包
 
 ```sh
 sudo yum install libcurl openssl
 ```
 
-> 安装MongoDB
+### 安装MongoDB
 
 下载`MongoDB`源码，下载地址：[https://www.mongodb.com/download-center#community](https://www.mongodb.com/download-center#community)
 
@@ -28,7 +28,7 @@ $ mv mongodb-shell-linux-x86_64-rhel70-4.4.2 mongodb4
 $ export PATH=${mongodb-install-directory}/bin:$PATH
 ```
 
-> 创建数据库目录
+### 创建数据库目录
 
 默认情况下 MongoDB 启动后会初始化以下两个目录
 
@@ -44,7 +44,7 @@ $ sudo chown `whoami` /var/lib/mongo     # 设置权限
 $ sudo chown `whoami` /var/log/mongodb   # 设置权限
 ```
 
-> 编写启动配置文件
+### 编写启动配置文件
 
 创建`mongodb.conf`文件写入一下内容
 
@@ -65,13 +65,13 @@ bind_ip=0.0.0.0
 logappend=true
 ```
 
-> 启动MongoDB
+### 启动MongoDB
 
 ```sh
 $ mongodb --config mongodb.conf
 ```
 
-> 添加用户名和密码
+### 添加用户名和密码
 
 登陆MongoDB
 
@@ -92,7 +92,7 @@ $ db.createUser({ user: "root", pwd: "password", roles: [{ role: "userAdminAnyDa
 $ db.auth("root", "password")
 ```
 
-> 测试远程访问
+### 测试远程访问
 
 使用ip+端口访问，如`127.0.0.1:27017`
 
@@ -100,7 +100,7 @@ $ db.auth("root", "password")
 
 能访问到，就说明服务开启成功，并且可以远程访问。
 
-> 使用`systemd`进行服务管理
+### 使用`systemd`进行服务管理
 
 在`/etc/systemd/system`目录下新建名为`mongod.service`的文件，内容如下：
 

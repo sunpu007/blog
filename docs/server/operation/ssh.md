@@ -1,6 +1,6 @@
 # 实现ssh免密登陆服务器
 
-> 创建ssh公钥
+### 创建ssh公钥
 
 ```sh
 # 创建公钥
@@ -9,7 +9,7 @@ $ ssh-keygen -o
 $ cat ~/.ssh/id_rsa.pub
 ```
 
-> 在服务器`authorized_keys`添加公钥
+### 在服务器`authorized_keys`添加公钥
 
 ```sh
 $ cd ~/.ssh/
@@ -19,7 +19,7 @@ $ vim authorized_keys
 
 在文件中写入上面的公钥信息，`wq!`保存并退出
 
-> 关闭密码登录(可选)
+### 关闭密码登录(可选)
 
 ```sh
 # 进入sshd_config文件，将"PasswordAuthentication yes"修改为"PasswordAuthentication no"

@@ -1,10 +1,10 @@
 # 手写脚手架工具
 
-> 什么是cli
+### 什么是cli
 
 **命令行界面**（英语：**command-line interface**，[缩写]：**CLI**）是在图形用户界面得到普及之前使用最为广泛的[用户界面]，它通常不支持[鼠标]，用户通过键盘输入指令，计算机接收到指令后，予以执行。
 
-> 所需依赖包
+### 所需依赖包
 
 - **commander** 参数解析 如：-V、--help
 - **axios** 接口调用
@@ -17,7 +17,7 @@
 - **ejs** 模版编译
 - **util** 工具方法
 
-> 目录结构
+### 目录结构
 
 ```sh
 ├── bin 
@@ -29,13 +29,13 @@
 │ ├── main.js // 入口文件 
 ```
 
-> 实现功能
+### 实现功能
 
 ```sh
 vue-cli create projectName
 ```
 
-> 创建工程
+### 创建工程
 
 **创建项目文件夹**
 
@@ -75,7 +75,7 @@ npm link
 
 *链接成功后可在命令行执行`vue-cli`命令测试*
 
-> 添加参数解析
+### 添加参数解析
 
 - 安装模块
 
@@ -109,7 +109,7 @@ const { version } = require('./constants');
 program.version(version).parse(process.argv);
 ```
 
-> 添加指令命令
+### 添加指令命令
 
 根据我们想要实现的功能配置执行的动作。
 
@@ -172,7 +172,7 @@ program.on('--help', _ => {
 
 *执行`vue-cli --help`可打印出配置的命令信息*
 
-> 实现create命令
+### 实现create命令
 
 create命令的主要作用是拉取git仓库中的对应模版到本地
 
@@ -195,7 +195,7 @@ module.exports = async (projectName) => {
 
 *执行`vue-cli create projectName`可以打印出projectName*
 
-> 拉取项目
+### 拉取项目
 
 我们需要获取仓库的所有模版信息（*以github为例*）。通过使用axios获取获取相关信息
 
@@ -224,7 +224,7 @@ module.exports = async () => {
 };
 ```
 
-> 添加loading和命令行交互工具
+### 添加loading和命令行交互工具
 
 ```sh
 npm install --save-dev inquirer ora
@@ -261,7 +261,7 @@ module.exports = async () => {
 };
 ```
 
-> 获取模版版本信息
+### 获取模版版本信息
 
 封装loading
 
@@ -304,7 +304,7 @@ const { tag } = await Inquirer.prompt({
 ...
 ```
 
-> 下载项目
+### 下载项目
 
 获取项目临时存放目录
 
@@ -366,7 +366,7 @@ await ncp(dest, path.join(path.resolve(), projectName))
 
 这样就创建了一个简单的模版项目
 
-> 复杂模版下载
+### 复杂模版下载
 
 通常用户可以定制下载模版的内容，例如`package.json`文件，用户可以根据提示设置项目名、描述等。项目模版中增加了`ask.js`文件
 
@@ -462,7 +462,7 @@ if (!fs.existsSync(path.join(dest, 'ask.js'))) {
 ...
 ```
 
-> 优化
+### 优化
 
 判断当前目录是否存在相同的文件夹
 
@@ -481,7 +481,7 @@ if (fs.existsSync(path.resolve(projectName))) {
 ...
 ```
 
-> 发布工具
+### 发布工具
 
 ```sh
 nrm use npm  // 准备发布包

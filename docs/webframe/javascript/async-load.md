@@ -1,14 +1,14 @@
 # 动态加载js与css文件
 
-> 背景
+###  背景
 
 在前端日常开发中，肯定会遇到这样的需求场景：一个使用频率很低的功能引入了较大的第三方SDK，且第三方SDK没有提供相应的npm包，无法按需引入，只能在index.html中使用标签的方式引入，导致项目启动的时候需要加载较多的文件，带来了首屏渲染的时间延长。当然也可以使用`async`与`defer`属性告诉浏览器延迟执行，但还是会浪费一定的加载资源。
 
 所以可以采用资源的动态加载，只有在需要的时候去动态加载相应的资源文件。
 
-> 实现
+### 实现
 
-**动态加载js**
+#### 动态加载js
 
 实现思想：
 
@@ -44,7 +44,7 @@ if (scriptNodes.includes(srcUrl)) return resolve()
 ...
 ```
 
-> 完整代码
+### 完整代码
 
 ```js
 /**
@@ -72,7 +72,7 @@ export function loadJs(srcUrl) {
 }
 ```
 
-**动态加载css**
+#### 动态加载css
 
 ```js
 /**
@@ -101,7 +101,7 @@ export function loadCss(hrefUrl) {
 }
 ```
 
-**动态加载多个文件**
+#### 动态加载多个文件
 
 ```js
 /**
@@ -128,7 +128,7 @@ export function asyncLoad(jsList, cssList) {
 }
 ```
 
-> 使用
+### 使用
 
 ```js
 loadJs('js_url').then(res => ...)

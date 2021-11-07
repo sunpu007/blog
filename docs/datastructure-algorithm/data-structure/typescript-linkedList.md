@@ -1,6 +1,6 @@
 # 使用Typescript实现LinkedList
 
-> 完整代码
+### 完整代码
 
 ``` typescript
 class Node {
