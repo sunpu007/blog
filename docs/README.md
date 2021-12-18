@@ -10,6 +10,7 @@ features:
   details: 活跃在自己的认知领域，偶尔也跳出来看看
 - title: 服务器
   details: 阿里云云大使与使用者
-footer: 陕ICP备17007879号 | Copyright © 2017-present Jerry
+# footer: 陕ICP备17007879号] | Copyright © 2017-present Jerry
 ---
 
+<div class="footer"><a href="https://beian.miit.gov.cn/">陕ICP备17007879号</a> | Copyright © 2017-present Jerry</div>
