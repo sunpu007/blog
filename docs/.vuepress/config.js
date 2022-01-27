@@ -1,7 +1,7 @@
 const clientId = process.env.GITHUB_CLIENT_ID;
 const clientSecret = process.env.GITHUB_CLIENT_SECRET;
 const baiduKey = process.env.BAI_DU_KEY;
-console.log('========>', clientId, clientSecret, baiduKey);
+console.log('========>', process.env, clientId, clientSecret, baiduKey);
 
 module.exports = {
   title: 'Jerry的博客',
