@@ -173,6 +173,7 @@ module.exports = {
       repo: 'blog', //github一个项目的名称
       clientId,//注册的Client ID
       clientSecret,//注册的Client Secret
+      proxy: 'https://www.myjerry.cn',
       autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
     }], // 评论
     ["copyright", {
