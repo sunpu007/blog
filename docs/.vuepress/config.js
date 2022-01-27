@@ -1,15 +1,6 @@
 const clientId = process.env.GITHUB_CLIENT_ID;
 const clientSecret = process.env.GITHUB_CLIENT_SECRET;
 const baiduKey = process.env.BAI_DU_KEY;
-console.log('========>', {
-      platform: 'github', //v3的platform是github，v4的是github-v4
-      locale: 'zh', //语言
-      owner: 'sunpu007', //github账户名
-      repo: 'blog', //github一个项目的名称
-      clientId,//注册的Client ID
-      clientSecret,//注册的Client Secret
-      autoCreateIssue: true // 自动创建评论，默认是false，最好开启，这样首次进入页面的时候就不用去点击创建评论的按钮了。
-    });
 
 module.exports = {
   title: 'Jerry的博客',
