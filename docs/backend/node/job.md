@@ -570,6 +570,6 @@ export default {
 
 服务端源码：[admin-server](https://github.com/sunpu007/admin-server)
 
-预览地址：[admin-demo](http://admin-demo.myjerry.cn)
+预览地址：[admin-demo](https://admin-demo.myjerry.cn)
 
 <Vssue :title="$title" />
