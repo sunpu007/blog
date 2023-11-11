@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm install
 COPY . .
-RUN npm run build
+RUN npm run docs:build
 
 # 第二阶段：用 nginx 镜像来托管构建好的静态文件
 FROM nginx:latest
