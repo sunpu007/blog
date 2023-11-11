@@ -2,10 +2,11 @@
 FROM node:latest as builder
 
 WORKDIR /app
-COPY package.json ./
-RUN npm install
+COPY package.json yarn.lock ./
+# 使用 Yarn 安装依赖
+RUN yarn install
 COPY . .
-RUN npm run docs:build
+RUN yarn docs:build
 
 # 第二阶段：用 nginx 镜像来托管构建好的静态文件
 FROM nginx:latest
