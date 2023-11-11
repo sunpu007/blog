@@ -2,7 +2,7 @@
 FROM node:latest as builder
 
 WORKDIR /app
-COPY package.json yarn.lock ./
+COPY package.json ./
 # 使用 Yarn 安装依赖
 RUN yarn install
 COPY . .
