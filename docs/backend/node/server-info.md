@@ -79,7 +79,7 @@ const getMem = async () => {
 }
 ```
 
-![image-20210517141218705](https://oss-blog.myjerry.cn/files/image-20210517141218705.png)
+![image-20210517141218705](/images/image-20210517141218705.png)
 
 ### 获取服务器基本信息
 
