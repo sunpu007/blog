@@ -10,7 +10,7 @@ sudo yum install libcurl openssl
 
 下载`MongoDB`源码，下载地址：[https://www.mongodb.com/download-center#community](https://www.mongodb.com/download-center#community)
 
-![image-20201124120633052](https://oss-blog.myjerry.cn/files/image-20201124120633052.png)
+![image-20201124120633052](/images/image-20201124120633052.png)
 
 下载tgz安装包，并解压tgz。
 
@@ -96,7 +96,7 @@ $ db.auth("root", "password")
 
 使用ip+端口访问，如`127.0.0.1:27017`
 
-![image-20201124122800195](https://oss-blog.myjerry.cn/files/image-20201124122800195.png)
+![image-20201124122800195](/images/image-20201124122800195.png)
 
 能访问到，就说明服务开启成功，并且可以远程访问。
 
@@ -125,7 +125,7 @@ $ sudo systemctl daemon-reload
 $ sudo systemctl status mongod
 ```
 
-![image-20201124123122694](https://oss-blog.myjerry.cn/files/image-20201124123122694.png)
+![image-20201124123122694](/images/image-20201124123122694.png)
 
 设置开机启动
 
