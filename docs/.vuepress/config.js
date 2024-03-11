@@ -1,6 +1,6 @@
-const clientId = process.env.GITHUB_CLIENT_ID;
-const clientSecret = process.env.GITHUB_CLIENT_SECRET;
-const baiduKey = process.env.BAI_DU_KEY;
+const clientId = 'cf4688b75929f82666bd';
+const clientSecret = '2556e373875d899e7750cf27d97189b3974bf4e7';
+const baiduKey = '97f3b97ce0bea6ad75db099c2a6e1504';
 
 module.exports = {
   title: 'Jerry的博客',
