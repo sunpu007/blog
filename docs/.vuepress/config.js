@@ -17,6 +17,24 @@ module.exports = {
       "script",
       {},
       `
+      window.__rum = {
+        "pid": "gx1kuz64zg@95fdd72b343c07d",
+        "endpoint": "https://gx1kuz64zg-default-cn.rum.aliyuncs.com"
+      };
+      `
+    ],
+    [
+      "script",
+      {
+        type: "text/javascript",
+        src: 'https://sdk.rum.aliyuncs.com/v2/browser-sdk.js',
+        crossorigin: 'crossorigin'
+      }
+    ],
+    [
+      "script",
+      {},
+      `
       var _hmt = _hmt || [];
       (function() {
         var hm = document.createElement("script");
