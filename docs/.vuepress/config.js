@@ -43,7 +43,15 @@ module.exports = {
         s.parentNode.insertBefore(hm, s);
       })();
       `
-    ]
+    ],
+    [
+      "script",
+      {
+        async: 'async',
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1039566856859181',
+        crossorigin: 'anonymous',
+      },
+    ],
   ],
   // 显示行号
   // markdown: {
