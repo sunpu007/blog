@@ -36,7 +36,7 @@ function checkMobile(mobile) {
   if (mobile === null || mobile.toString() === '') {
     return false
   }
-  if ((/^1[34578]\d{9}$/.test(mobile))) {
+  if ((/^1[345789]\d{9}$/.test(mobile))) {
     return true
   } else {
     return false
